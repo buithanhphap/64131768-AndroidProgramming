@@ -64,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:text="+"
+            android:onClick="XuLyCong"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
@@ -72,6 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:text="-"
+            android:onClick="XuLyTru"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
@@ -80,6 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:text="*"
+            android:onClick="XuLyNhan"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
@@ -88,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:text="/"
+            android:onClick="XuLyChia"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
