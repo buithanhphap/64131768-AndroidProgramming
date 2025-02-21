@@ -16,3 +16,16 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ### [Ex3_SimpleSumApp](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex3_SimpleSumApp)
 ![image](https://github.com/user-attachments/assets/161e0f20-9665-43b6-9e88-86faf000bc4e)
 
+### [Ex4_AddSubMulDiv_Onclick](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex4_AddSubMulDiv_Onclick)
+![image](https://github.com/user-attachments/assets/6c9b9f74-bedf-41c7-a1af-1a24853ac69a)
+![image](https://github.com/user-attachments/assets/13fb63a5-1a65-442d-8f7f-d6fc8d44a9a0)
+![image](https://github.com/user-attachments/assets/a4674bf4-b6a0-4f66-8f28-cec09c8cb0d3)
+![image](https://github.com/user-attachments/assets/5472caea-3462-4427-9d09-5ef9977c790e)
+
+![image](https://github.com/user-attachments/assets/bebd4c51-9363-4e9c-8227-98992af4cb9e)
+
+
+
+
+
+
