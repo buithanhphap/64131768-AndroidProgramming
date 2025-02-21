@@ -12,3 +12,7 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 
 ### [Ex2_LinearLayout](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex2_LinearLayout)
 ![image](https://github.com/user-attachments/assets/32aed54c-1260-491d-8390-ec4ddd5fa4d3)
+
+### [Ex3_SimpleSumApp](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex3_SimpleSumApp)
+![image](https://github.com/user-attachments/assets/161e0f20-9665-43b6-9e88-86faf000bc4e)
+
