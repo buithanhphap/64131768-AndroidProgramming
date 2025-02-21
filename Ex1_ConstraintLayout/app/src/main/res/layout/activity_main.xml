@@ -19,7 +19,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/screenshot_2025_02_21_143901" />
-
+    <ImageView
+        android:id="@+id/ngoiSao"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ngoi_sao"
+        tools:layout_editor_absoluteX="338dp"
+        tools:layout_editor_absoluteY="109dp" />
     <Button
         android:id="@+id/upload"
         android:layout_width="wrap_content"
@@ -32,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/discard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
@@ -43,15 +50,15 @@
         app:layout_constraintEnd_toStartOf="@+id/upload" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/cameraLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Camera"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cameraType"
         tools:layout_editor_absoluteX="26dp" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/cameraType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="101dp"
@@ -77,16 +84,16 @@
         tools:layout_editor_absoluteY="154dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/settingsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:text="Settings"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextText2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/settings"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
@@ -95,10 +102,10 @@
         android:inputType="text"
         android:text="f/4 16s ISO 200 "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/cameraType" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/description"
         android:layout_width="409dp"
         android:layout_height="370dp"
         android:layout_marginStart="26dp"
@@ -108,6 +115,6 @@
         app:layout_constraintBottom_toTopOf="@+id/upload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
+        app:layout_constraintTop_toBottomOf="@+id/settings"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
