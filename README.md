@@ -10,3 +10,5 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ### [Ex1_ConstraintLayout](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex1_ConstraintLayout)
 ![image](https://github.com/user-attachments/assets/626a335a-0eb1-49f7-995c-51abd96acc68)
 
+### [Ex2_LinearLayout](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex2_LinearLayout)
+![image](https://github.com/user-attachments/assets/32aed54c-1260-491d-8390-ec4ddd5fa4d3)
