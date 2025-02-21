@@ -74,14 +74,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="294dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="@string/app_name"
         android:text="Singapore"
         android:textAlignment="textStart"
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/cameraType"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="154dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/settingsLabel"
