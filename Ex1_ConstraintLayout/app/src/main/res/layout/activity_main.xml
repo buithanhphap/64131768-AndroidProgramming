@@ -24,10 +24,12 @@
         android:id="@+id/favorite"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/ngoi_sao"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title"
@@ -90,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:text="Singapore, officially the Republic of Singapore, is often referred to as the Lion City, the Garden City, and the Red Dot. It is a global city in Southeast Asia and the world's only island city-state."
+        android:text="Singapore officially the Republic of Singapore, and often referred to as the Lion City, the Garden City, and the Red Dot, is global city in Southeast Asia and the world's only island city-state. It lies one degree (137 km) north of the equator, at the southernmost tip of continental Asia and peninsular Malaysia, with Indonesia's Riau Islands to the south Singapore's territory consists of the diamond-shaped main island and 62. islets."
         app:layout_constraintTop_toBottomOf="@+id/settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
