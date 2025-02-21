@@ -52,14 +52,6 @@
         app:layout_constraintEnd_toStartOf="@+id/upload" />
 
     <TextView
-        android:id="@+id/cameraLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Camera"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cameraType"
-        tools:layout_editor_absoluteX="26dp" />
-
-    <TextView
         android:id="@+id/settingsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,6 +59,14 @@
         android:text="Settings"
         app:layout_constraintBaseline_toBaselineOf="@+id/settings"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/cameraLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cameraType"
+        tools:layout_editor_absoluteX="26dp" />
 
     <EditText
         android:id="@+id/cameraType"
@@ -126,5 +126,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left"
-        app:constraint_referenced_ids="settingsLabel,cameraType,main" />
+        app:constraint_referenced_ids="settingsLabel,cameraLabel,main" />
 </androidx.constraintlayout.widget.ConstraintLayout>
