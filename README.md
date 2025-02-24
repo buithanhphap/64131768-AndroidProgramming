@@ -38,6 +38,17 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ![image](https://github.com/user-attachments/assets/a5fe80b4-b84a-4485-a469-eb8d67c5b377)
 ![image](https://github.com/user-attachments/assets/7b7db586-0bc7-4c64-b50e-ef04eb1dd26d)
 
+### [DataExchangeIntent](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/DataExchangeIntent)
+![image](https://github.com/user-attachments/assets/4176fb5b-77fd-4a56-8137-28e72eeb6579)
+![image](https://github.com/user-attachments/assets/5d6694ce-dcec-43c9-9480-5ae718633b85)
+![image](https://github.com/user-attachments/assets/f4f79e8d-05f3-4ed5-af78-0399ed58045c)
+![image](https://github.com/user-attachments/assets/dcc90e29-c8d8-496c-b6d3-4b1e35b549be)
+
+
+
+
+
+
 
 
 
