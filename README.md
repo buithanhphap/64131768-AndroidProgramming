@@ -28,6 +28,16 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ![image](https://github.com/user-attachments/assets/0c194772-45fd-4429-b50f-a12d24c516ad)
 ![image](https://github.com/user-attachments/assets/7cde1d95-4fa0-4ec2-b1c0-70e86364dfc3)
 
+### [Ex5_AddSubMulDiv_Var](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex5_AddSubMulDiv_Var)
+![image](https://github.com/user-attachments/assets/1a1e9659-7d46-4b0d-81af-56fe7203285a)
+![image](https://github.com/user-attachments/assets/c5510ae6-cb79-4c71-a578-9f40e0a4375c)
+![image](https://github.com/user-attachments/assets/30633878-ac85-4ffe-972e-23ebb615b71d)
+![image](https://github.com/user-attachments/assets/2c8b7205-69e0-4f93-aee5-428871703ed0)
+
+
+
+
+
 
 
 
