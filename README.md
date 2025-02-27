@@ -44,6 +44,11 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ![image](https://github.com/user-attachments/assets/f4f79e8d-05f3-4ed5-af78-0399ed58045c)
 ![image](https://github.com/user-attachments/assets/dcc90e29-c8d8-496c-b6d3-4b1e35b549be)
 
+### [BMICalculator](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/BMICalculator)
+![image](https://github.com/user-attachments/assets/1880083b-7c44-4f0f-a9fb-2e9b4c442d12)
+
+
+
 
 
 
