@@ -50,6 +50,10 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ### [LT1ChuViHCN](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT1ChuViHCN)
 ![image](https://github.com/user-attachments/assets/53e14a72-bcbd-41e8-814c-96330db70560)
 
+### [LT2DienTichHCN](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT2DienTichHCN)
+![image](https://github.com/user-attachments/assets/52c3623c-c1d5-4b95-9eb4-704da9b72d47)
+
+
 
 
 
