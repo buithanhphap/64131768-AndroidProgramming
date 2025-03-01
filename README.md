@@ -56,6 +56,10 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ### [LT3DoiDonVi](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT3DoiDonVi)
 ![image](https://github.com/user-attachments/assets/55e7a272-6120-4558-ad88-261da9ed4399)
 
+### [LT4TinhTuoi](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT4TinhTuoi)
+![image](https://github.com/user-attachments/assets/04442c0b-26b4-4c17-ac12-e8781832be43)
+
+
 
 
 
