@@ -57,7 +57,7 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ![image](https://github.com/user-attachments/assets/55e7a272-6120-4558-ad88-261da9ed4399)
 
 ### [LT4TinhTuoi](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT4TinhTuoi)
-![image](https://github.com/user-attachments/assets/04442c0b-26b4-4c17-ac12-e8781832be43)
+![image](https://github.com/user-attachments/assets/4d7e2aa2-4f97-49b8-ab74-ddc4c1c6b23f)
 
 ### [LT5_AddSubMulDiv_ActiviyAsListner](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT5_AddSubMulDiv_ActiviyAsListner)
 ![image](https://github.com/user-attachments/assets/19a3599d-600b-41c4-9fa3-d246553ca4c6)
