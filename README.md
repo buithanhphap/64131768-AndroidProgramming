@@ -62,6 +62,9 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ### [LT5_AddSubMulDiv_ActiviyAsListner](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT5_AddSubMulDiv_ActiviyAsListner)
 ![image](https://github.com/user-attachments/assets/19a3599d-600b-41c4-9fa3-d246553ca4c6)
 
+### [LT6_HocBangCuuChuong](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT6_HocBangCuuChuong)
+![image](https://github.com/user-attachments/assets/9919e169-2236-448c-94a4-03cfa8030bcb)
+
 
 
 
