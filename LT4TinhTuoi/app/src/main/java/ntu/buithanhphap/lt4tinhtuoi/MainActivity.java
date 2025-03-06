@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Ánh xạ các View
+
         edtSo1 = findViewById(R.id.edtSo1);
         btnTinhTuoi = findViewById(R.id.btnTinhTuoi);
         tvKetQua = findViewById(R.id.tvKetQua);
-        // Bắt sự kiện khi nhấn nút
+
         btnTinhTuoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,26 +37,26 @@ public class MainActivity extends AppCompatActivity {
     }
     public void TinhTuoi() {
         // Lấy năm hiện tại
-        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        int NamHT = Calendar.getInstance().get(Calendar.YEAR);
 
         // Lấy dữ liệu từ EditText
-        String birthYearStr = edtSo1.getText().toString();
+        String NamSinh = edtSo1.getText().toString();
 
-        if (birthYearStr.isEmpty()) {
+        if (NamSinh.isEmpty()) {
             Toast.makeText(this, "Vui lòng nhập năm sinh!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        int birthYear = Integer.parseInt(birthYearStr);
+        int birthYear = Integer.parseInt(NamSinh);
 
         // Kiểm tra năm sinh hợp lệ
-        if (birthYear > currentYear) {
+        if (birthYear > NamHT) {
             Toast.makeText(this, "Năm sinh không hợp lệ!", Toast.LENGTH_SHORT).show();
             return;
         }
 
         // Tính tuổi
-        int age = currentYear - birthYear;
+        int age = NamHT - birthYear;
 
         // Hiển thị kết quả
         tvKetQua.setText("Tuổi của bạn: " + age + " tuổi");
