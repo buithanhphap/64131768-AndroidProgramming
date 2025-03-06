@@ -13,10 +13,18 @@
         android:layout_height="wrap_content"
         android:text="MÀN HÌNH CHÍNH Ở ĐÂY"
         android:textSize="20dp"
+        android:textStyle="bold"
+        android:padding="20dp"/>
     <Button
         android:id="@+id/btnMH2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Màn hình 2">
-    </Button>
+        android:text="Màn hình 2"
+        />
+    <Button
+        android:id="@+id/btnMH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Màn hình 3"
+        />
 </LinearLayout>
