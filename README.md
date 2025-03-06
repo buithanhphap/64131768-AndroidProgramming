@@ -37,6 +37,9 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ### [Ex6_IntentDonGian](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex6_IntentDonGian)
 ![image](https://github.com/user-attachments/assets/8b8dbd56-de70-4e78-8f67-66b2da1d569a)
 
+### [Ex7_IntentLogin](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex7_IntentLogin)
+![image](https://github.com/user-attachments/assets/9838b251-7101-4991-845c-b15384a65176)
+
 ### [SimpleExplicitIntents](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/SimpleExplicitIntents)
 ![image](https://github.com/user-attachments/assets/a5fe80b4-b84a-4485-a469-eb8d67c5b377)
 ![image](https://github.com/user-attachments/assets/7b7db586-0bc7-4c64-b50e-ef04eb1dd26d)
