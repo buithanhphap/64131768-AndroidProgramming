@@ -34,6 +34,9 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ![image](https://github.com/user-attachments/assets/30633878-ac85-4ffe-972e-23ebb615b71d)
 ![image](https://github.com/user-attachments/assets/2c8b7205-69e0-4f93-aee5-428871703ed0)
 
+### [Ex6_IntentDonGian](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/Ex6_IntentDonGian)
+![image](https://github.com/user-attachments/assets/8b8dbd56-de70-4e78-8f67-66b2da1d569a)
+
 ### [SimpleExplicitIntents](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/SimpleExplicitIntents)
 ![image](https://github.com/user-attachments/assets/a5fe80b4-b84a-4485-a469-eb8d67c5b377)
 ![image](https://github.com/user-attachments/assets/7b7db586-0bc7-4c64-b50e-ef04eb1dd26d)
@@ -64,6 +67,7 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 
 ### [LT6_HocBangCuuChuong](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LT6_HocBangCuuChuong)
 ![image](https://github.com/user-attachments/assets/9919e169-2236-448c-94a4-03cfa8030bcb)
+
 
 
 
