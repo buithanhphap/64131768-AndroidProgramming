@@ -46,12 +46,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         String strA = edtSo1.getText().toString();
         String strB = edtSo2.getText().toString();
 
-        // Kiểm tra nếu EditText rỗng
-        if (strA.isEmpty() || strB.isEmpty()) {
-            tvKetQua.setText("Vui lòng nhập số a và b!");
-            return;
-        }
-
         // Chuyển đổi sang số
         double a = Double.parseDouble(strA);
         double b = Double.parseDouble(strB);
