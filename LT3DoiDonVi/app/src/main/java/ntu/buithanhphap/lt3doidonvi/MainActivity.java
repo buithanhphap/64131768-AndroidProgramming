@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Ánh xạ View
+
         edtSo1 = findViewById(R.id.edtSo1);
         spinner = findViewById(R.id.spinner);
         spinner2 = findViewById(R.id.spinner2);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
         spinner2.setAdapter(adapter);
 
-        // Xử lý sự kiện khi nhấn nút chuyển đổi
+
         btnChuyenDonVi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,42 +48,36 @@ public class MainActivity extends AppCompatActivity {
     public void ChuyenDonVi() {
         // Lấy giá trị nhập vào
         String inputText = edtSo1.getText().toString();
-        if (inputText.isEmpty()) {
-            tvKetQua.setText("Vui lòng nhập giá trị!");
-            return;
-        }
-
         int inputValue = Integer.parseInt(inputText);
         String fromUnit = spinner.getSelectedItem().toString();
         String toUnit = spinner2.getSelectedItem().toString();
-
-        int result = convertValue(inputValue, fromUnit, toUnit);
+        int result = DoiGiaTri(inputValue, fromUnit, toUnit);
         tvKetQua.setText(inputValue + " " + fromUnit + " = " + result + " " + toUnit);
     }
 
-    private int convertValue(int value, String fromUnit, String toUnit) {
+    private int DoiGiaTri(int value, String fromUnit, String toUnit) {
         // Chuyển tất cả về đơn vị cơ bản là mét (m)
-        int valueInMeters;
+        int GiaTriMet;
         switch (fromUnit) {
-            case "km": valueInMeters = value * 1000; break;
-            case "hm": valueInMeters = value * 100; break;
-            case "dam": valueInMeters = value * 10; break;
-            case "dm": valueInMeters = value / 10; break;
-            case "cm": valueInMeters = value / 100; break;
-            case "mm": valueInMeters = value / 1000; break;
-            default: valueInMeters = value; // "m"
+            case "km": GiaTriMet = value * 1000; break;
+            case "hm": GiaTriMet = value * 100; break;
+            case "dam": GiaTriMet = value * 10; break;
+            case "dm": GiaTriMet = value / 10; break;
+            case "cm": GiaTriMet = value / 100; break;
+            case "mm": GiaTriMet = value / 1000; break;
+            default: GiaTriMet = value; // "m"
         }
 
         // Chuyển từ mét (m) sang đơn vị mong muốn
         int result;
         switch (toUnit) {
-            case "km": result = valueInMeters / 1000; break;
-            case "hm": result = valueInMeters / 100; break;
-            case "dam": result = valueInMeters / 10; break;
-            case "dm": result = valueInMeters * 10; break;
-            case "cm": result = valueInMeters * 100; break;
-            case "mm": result = valueInMeters * 1000; break;
-            default: result = valueInMeters; // "m"
+            case "km": result = GiaTriMet / 1000; break;
+            case "hm": result = GiaTriMet / 100; break;
+            case "dam": result = GiaTriMet / 10; break;
+            case "dm": result = GiaTriMet * 10; break;
+            case "cm": result = GiaTriMet * 100; break;
+            case "mm": result = GiaTriMet * 1000; break;
+            default: result = GiaTriMet; // "m"
         }
         return result;
     }
