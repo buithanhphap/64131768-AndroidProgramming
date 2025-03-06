@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="UserEmail:"/>
         <EditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edtMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
