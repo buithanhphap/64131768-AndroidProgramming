@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Ánh xạ các thành phần giao diện
         edtSo1 = findViewById(R.id.edtSo1);
         edtSo2 = findViewById(R.id.edtSo2);
         tvKetQua = findViewById(R.id.tvKetQua);
@@ -39,12 +38,6 @@ public class MainActivity extends AppCompatActivity {
     public void TinhDienTich() {
         String strChieuDai = edtSo1.getText().toString();
         String strChieuRong = edtSo2.getText().toString();
-
-        // Kiểm tra nhập liệu
-        if (strChieuDai.isEmpty() || strChieuRong.isEmpty()) {
-            tvKetQua.setText("Vui lòng nhập chiều dài và chiều rộng!");
-            return;
-        }
 
         try {
             double chieuDai = Double.parseDouble(strChieuDai);
