@@ -28,5 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapterNNLT;
         adapterNNLT = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dsNgonNguLT);
         //B3. Gắn adapter
+        listViewNNLT.setAdapter(adapterNNLT);
+        //B4. Gắn bộ lắng nghe và xử lý sự kiện
     }
 }
