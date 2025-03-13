@@ -74,6 +74,10 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ### [LVNgonNguLapTrinh](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LVNgonNguLapTrinh)
 ![image](https://github.com/user-attachments/assets/8a12c6ed-87bf-4a61-b697-a15f6218de60)
 
+### [LoginScreen](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LoginScreen)
+![image](https://github.com/user-attachments/assets/624d794a-88e4-4fe7-b991-b4214b56d573)
+
+
 
 
 
