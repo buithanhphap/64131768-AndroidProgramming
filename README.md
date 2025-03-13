@@ -77,6 +77,10 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ### [LoginScreen](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/LoginScreen)
 ![image](https://github.com/user-attachments/assets/624d794a-88e4-4fe7-b991-b4214b56d573)
 
+### [AmazonShop](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/AmazonShop)
+![image](https://github.com/user-attachments/assets/1668fd24-3646-4470-bc4f-d19dc8492e64)
+
+
 
 
 
