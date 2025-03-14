@@ -40,14 +40,15 @@
             app:layout_constraintEnd_toStartOf="@+id/amazonImage"/>
 
         <ImageView
+            android:id="@+id/amazonImage"
             android:layout_width="0dp"
             android:layout_height="160dp"
-            android:id="@+id/amazonImage"
-            android:src="@drawable/amazon"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintStart_toEndOf="@id/amazonName"/>
+            android:src="@drawable/amazon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/amazonName"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:layout_width="0dp"
