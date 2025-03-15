@@ -31,7 +31,6 @@
                 android:gravity="center"
                 android:layout_marginBottom="20dp"/>
 
-            <!-- Họ và Tên -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,7 +56,6 @@
                     android:padding="10dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Số điện thoại -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,7 +69,7 @@
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusBottomEnd="8dp"
-                app:startIconDrawable="@drawable/ic_phone">  <!-- Sửa ic_phonee thành ic_phone -->
+                app:startIconDrawable="@drawable/ic_phone">  
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPhoneNumber"
