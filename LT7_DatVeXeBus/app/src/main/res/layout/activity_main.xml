@@ -29,7 +29,9 @@
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusBottomEnd="20dp"
-        app:boxBackgroundColor="@color/white">
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/purple"
+        app:boxStrokeWidth="5dp">>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
