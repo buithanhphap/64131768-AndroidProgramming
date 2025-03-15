@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         dsChuyenDi.add("Hà Nội - Sài Gòn");
         dsChuyenDi.add("Đà Nẵng - Nha Trang");
         dsChuyenDi.add("Sài Gòn - Cần Thơ");
+        dsChuyenDi.add("Nha Trang - Sài Gòn");
+        dsChuyenDi.add("Cam Ranh - Hà Nội");
 
         // B2: Gắn Adapter cho RecyclerView
         adapter = new BusAdapter(dsChuyenDi, new BusAdapter.OnItemClickListener() {
