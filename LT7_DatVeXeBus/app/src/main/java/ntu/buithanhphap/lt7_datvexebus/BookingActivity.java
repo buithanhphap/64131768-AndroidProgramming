@@ -24,7 +24,7 @@ public class BookingActivity extends AppCompatActivity {
         edtPhoneNumber = findViewById(R.id.edtPhoneNumber);
         edtTickets = findViewById(R.id.edtTickets);
         btnDatVe = findViewById(R.id.btnDatVe);
-        
+
         // Nút xác nhận đặt vé
         btnDatVe.setOnClickListener(new View.OnClickListener() {
             @Override
