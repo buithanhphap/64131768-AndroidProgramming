@@ -69,7 +69,7 @@
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusBottomEnd="8dp"
-                app:startIconDrawable="@drawable/ic_phone">  
+                app:startIconDrawable="@drawable/ic_phone">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPhoneNumber"
