@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BusDetailsActivity">
+    android:padding="20dp"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvBusName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hà Nội - Đà Nẵng"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvBusDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Khởi hành: 08:00 AM\nGiá vé: 300.000 VND"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/btnBookTicket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Đặt Vé" />
+</LinearLayout>
