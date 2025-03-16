@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,5 +59,26 @@ public class MainActivity extends AppCompatActivity {
                 loadNewImage();
             }
         });
+    }
+    private void loadNewImage() {
+        currentIndex = random.nextInt(images.length);
+        ivImage.setImageResource(imageRes[currentIndex]);
+        correctAnswer = images[currentIndex];
+        edtTraLoi.setText("");
+    }
+
+    private void checkAnswer() {
+        String answer = edtTraLoi.getText().toString().trim().toLowerCase();
+        if (answer.equals(correctAnswer)) {
+            score += 10;
+            tvDiem.setText("Điểm: " + score);
+            if (score > highScoreManager.getHighScore()) {
+                highScoreManager.saveHighScore(score);
+                tvDiemCaoNhat.setText("Điểm cao nhất: " + score);
+            }
+            Toast.makeText(this, "Chính xác!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Sai rồi, thử lại!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
