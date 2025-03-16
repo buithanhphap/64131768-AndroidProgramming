@@ -7,15 +7,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ImageView ivImage;
@@ -28,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
     String correctAnswer;
     int score = 0;
     HighScoreManager highScoreManager;
-    Random random = new Random();
-    int currentIndex;
+    int currentIndex = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Tìm điều khiển
+
+        // Tìm điều khiển
         ivImage = findViewById(R.id.ivImage);
         edtTraLoi = findViewById(R.id.edtTraLoi);
         tvDiem = findViewById(R.id.tvDiem);
@@ -47,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
         loadNewImage();
 
+        //Nút bấm
         btnKiemTra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 KiemTraTraLoi();
             }
         });
+
         btnTiepTheo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,11 +57,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private void loadNewImage() {
-        currentIndex = random.nextInt(images.length);
-        ivImage.setImageResource(imageRes[currentIndex]);
-        correctAnswer = images[currentIndex];
-        edtTraLoi.setText("");
+        if (currentIndex < images.length) {
+            ivImage.setImageResource(imageRes[currentIndex]);
+            correctAnswer = images[currentIndex];
+            edtTraLoi.setText("");
+        } else {
+            // Hết ảnh => Kết thúc trò chơi
+            ivImage.setVisibility(View.GONE);
+            edtTraLoi.setVisibility(View.GONE);
+            btnKiemTra.setVisibility(View.GONE);
+            btnTiepTheo.setVisibility(View.GONE);
+
+            Toast.makeText(this, "Trò chơi kết thúc! Tổng điểm: " + score, Toast.LENGTH_LONG).show();
+        }
     }
 
     private void KiemTraTraLoi() {
@@ -77,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 tvDiemCaoNhat.setText("Điểm cao nhất: " + score);
             }
             Toast.makeText(this, "Chính xác!", Toast.LENGTH_SHORT).show();
+            currentIndex++; // Chuyển sang ảnh tiếp theo
         } else {
             Toast.makeText(this, "Sai rồi, thử lại!", Toast.LENGTH_SHORT).show();
         }
