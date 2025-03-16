@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         edtTraLoi.setText("");
     }
 
-    private void checkAnswer() {
+    private void KiemTraTraLoi() {
         String answer = edtTraLoi.getText().toString().trim().toLowerCase();
         if (answer.equals(correctAnswer)) {
             score += 10;
