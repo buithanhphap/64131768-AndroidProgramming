@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tvDiem, tvDiemCaoNhat;
     Button btnKiemTra, btnTiepTheo;
 
-    String[] images = {"daoaothaca", "cauchi", "trongvang", "tinhnghich"};
-    int[] imageRes = {R.drawable.daoaothaca, R.drawable.cauchi, R.drawable.trongvang, R.drawable.tinhnghich};
+    String[] images = {"daoaothaca", "cauchi", "trongvang", "tinhnghich", "anboobui"};
+    int[] imageRes = {R.drawable.daoaothaca, R.drawable.cauchi, R.drawable.trongvang, R.drawable.tinhnghich, R.drawable.anboobui};
     String correctAnswer;
     int score = 0;
     HighScoreManager highScoreManager;
