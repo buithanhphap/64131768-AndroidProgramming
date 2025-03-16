@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:padding="20dp"
     android:background="@drawable/hinhnen">
 
@@ -11,22 +12,48 @@
         android:id="@+id/btnPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="139dp"
+        android:backgroundTint="@color/button_green"
         android:text="Chơi"
-        android:textSize="18dp" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnRules"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="114dp"
+        android:backgroundTint="@color/button_gray"
         android:text="Luật chơi"
-        android:textSize="18dp"
-        android:layout_marginTop="10dp"/>
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnExit"
+        app:layout_constraintVertical_bias="0.2" />
 
     <Button
         android:id="@+id/btnExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="129dp"
+        android:backgroundTint="@color/button_red"
         android:text="Thoát"
-        android:textSize="18dp"
-        android:layout_marginTop="10dp"/>
-</LinearLayout>
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
