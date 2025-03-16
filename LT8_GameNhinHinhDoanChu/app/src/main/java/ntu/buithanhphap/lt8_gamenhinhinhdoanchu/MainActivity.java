@@ -1,6 +1,7 @@
 package ntu.buithanhphap.lt8_gamenhinhinhdoanchu;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,5 +33,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Tìm điều khiển
+        ivImage = findViewById(R.id.ivImage);
+        edtTraLoi = findViewById(R.id.edtTraLoi);
+        tvDiem = findViewById(R.id.tvDiem);
+        tvDiemCaoNhat = findViewById(R.id.tvDiemCaoNhat);
+        btnKiemTra = findViewById(R.id.btnKiemTra);
+        btnTiepTheo = findViewById(R.id.btnTiepTheo);
+
+        highScoreManager = new HighScoreManager(this);
+        tvDiemCaoNhat.setText("Điểm cao nhất: " + highScoreManager.getHighScore());
+
+        loadNewImage();
+
+        btnKiemTra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                KiemTraTraLoi();
+            }
+        });
+        btnTiepTheo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadNewImage();
+            }
+        });
     }
 }
