@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity {
         tvKetQua = findViewById(R.id.tvKetQua);
         btnKiemTra = findViewById(R.id.btnKiemTra);
 
-
-        tvKetQua = findViewById(R.id.tvKetQua);
-
+        PhepToanNgauNhien();
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,5 +94,20 @@ public class MainActivity extends AppCompatActivity {
                 tvKetQua.setText("9");
             }
         });
+        // Kiểm tra kết quả
+        btnKiemTra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    int dapAnNguoiDung = Integer.parseInt(tvKetQua.getText().toString());
+                    if (dapAnNguoiDung == ketQuaDung) {
+                        tvKetQua.setText("Đúng!");
+                    } else {
+                        tvKetQua.setText("Sai!");
+                    }
+                // Tạo phép toán mới sau khi kiểm tra
+                PhepToanNgauNhien();
+            }
+        });
+        
     }
 }
