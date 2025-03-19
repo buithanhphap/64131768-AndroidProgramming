@@ -58,5 +58,35 @@ public class MainActivity extends AppCompatActivity {
                 tvKetQua.setText("4");
             }
         });
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvKetQua.setText("5");
+            }
+        });
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvKetQua.setText("6");
+            }
+        });
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvKetQua.setText("7");
+            }
+        });
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvKetQua.setText("8");
+            }
+        });
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvKetQua.setText("9");
+            }
+        });
     }
 }
