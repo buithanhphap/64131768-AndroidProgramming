@@ -13,7 +13,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
-    TextView tvKetQua;
+    TextView tvSoA, tvSoB, tvPhepToan, tvKetQua;
+    int a, b, ketQuaDung;
+    String phepToan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
