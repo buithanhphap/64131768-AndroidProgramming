@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -100,14 +101,39 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                     int dapAnNguoiDung = Integer.parseInt(tvKetQua.getText().toString());
                     if (dapAnNguoiDung == ketQuaDung) {
-                        tvKetQua.setText("Đúng!");
+                        Toast.makeText(MainActivity.this, "Đúng!", Toast.LENGTH_SHORT).show();
                     } else {
-                        tvKetQua.setText("Sai!");
+                        Toast.makeText(MainActivity.this, "Sai!", Toast.LENGTH_SHORT).show();
                     }
                 // Tạo phép toán mới sau khi kiểm tra
                 PhepToanNgauNhien();
             }
         });
-        
+    }
+    void PhepToanNgauNhien() {
+        a = (int) (Math.random() * 5) + 1;
+        b = (int) (Math.random() * 5) + 1;
+        String[] phepToanArr = {"+", "-", "*", "/"};
+        phepToan = phepToanArr[(int) (Math.random() * phepToanArr.length)];
+
+        // Tính kết quả đúng
+        switch (phepToan) {
+            case "+":
+                ketQuaDung = a + b;
+                break;
+            case "-":
+                ketQuaDung = a - b;
+                break;
+            case "*":
+                ketQuaDung = a * b;
+                break;
+            case "/":
+                ketQuaDung = a / b;
+                break;
+        }
+        tvSoA.setText(String.valueOf(a));
+        tvSoB.setText(String.valueOf(b));
+        tvPhepToan.setText(phepToan);
+        tvKetQua.setText("");
     }
 }
