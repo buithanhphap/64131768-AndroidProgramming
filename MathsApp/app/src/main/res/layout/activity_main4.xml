@@ -6,5 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity4">
+    <View
+        android:id="@+id/view10"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/tieude"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/view11"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="204dp"
+        android:background="@drawable/tieude3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
+        android:layout_marginTop="316dp"
+        android:background="@drawable/hinh1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
