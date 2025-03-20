@@ -17,14 +17,19 @@
         android:padding="20dp"/>
     <Button
         android:id="@+id/btnMH2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:textSize="24sp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_button"
         android:text="Màn hình 2"
         />
     <Button
         android:id="@+id/btnMH3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:textSize="24sp"
+        android:background="@drawable/rounded_button"
         android:text="Màn hình 3"
         />
 </LinearLayout>
