@@ -51,6 +51,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:layout_width="183dp"
+        android:layout_height="253dp"
+        android:background="@drawable/tronn"
+        tools2:layout_editor_absoluteX="-75dp"
+        tools2:layout_editor_absoluteY="547dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
