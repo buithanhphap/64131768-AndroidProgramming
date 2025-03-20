@@ -111,12 +111,94 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view6"
+        android:id="@+id/view7"
         android:layout_width="169dp"
         android:layout_height="169dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="372dp"
         android:background="@drawable/khoi3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="112dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="404dp"
+        android:background="@drawable/ten3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="56dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="452dp"
+        android:background="@drawable/h3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="169dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="372dp"
+        android:background="@drawable/khoi4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="131dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="404dp"
+        android:background="@drawable/ten4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="56dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="452dp"
+        android:background="@drawable/h4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/icon3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/icon4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="356dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="560dp"
+        android:background="@drawable/o1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="281dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="580dp"
+        android:background="@drawable/ten5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
