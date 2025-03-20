@@ -4,6 +4,9 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
   
 ## Đây là kho lưu trữ bài tập khi tôi làm bài tập lớn và nhỏ, đây là kho lưu trữ tham khảo, không phải dự án lâu dài hoặc có thể sử dụng.
 
+### [KidsLearning](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/KidsLearning)
+![image](https://github.com/user-attachments/assets/d30d83c7-9a92-4f74-963c-b905bc083810)
+
 ### [BaiTrenLop](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/BaiTrenLop)
 ![image](https://github.com/user-attachments/assets/de765427-9b17-4e7b-8d95-3de182a74ecf)
 
