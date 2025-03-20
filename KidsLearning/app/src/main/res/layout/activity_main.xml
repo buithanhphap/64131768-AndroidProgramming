@@ -28,25 +28,26 @@
         android:id="@+id/view"
         android:layout_width="182dp"
         android:layout_height="185dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/tivi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <View
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="108dp"
+        android:layout_width="59dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/matcuoi"
         app:layout_constraintStart_toStartOf="parent"
-        tools2:layout_editor_absoluteY="318dp" />
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <View
         android:layout_width="188dp"
         android:layout_height="205dp"
         android:layout_marginStart="192dp"
-        android:layout_marginTop="476dp"
+        android:layout_marginTop="492dp"
         android:background="@drawable/tamgiac"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,18 +61,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
+    <View
+        android:id="@+id/view2"
+        android:layout_width="269dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="201dp"
-        android:text="KIDS Corner"
-        android:textSize="37sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
+        android:background="@drawable/ten"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
