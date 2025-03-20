@@ -30,4 +30,11 @@
         android:background="@drawable/tieude1"
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="230dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:background="@drawable/nut"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="339dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
