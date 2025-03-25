@@ -5,8 +5,7 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ## Đây là kho lưu trữ bài tập khi tôi làm bài tập lớn và nhỏ, đây là kho lưu trữ tham khảo, không phải dự án lâu dài hoặc có thể sử dụng.
 
 ###[UsingRecyclerView](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/UsingRecyclerView)
-![image](https://github.com/user-attachments/assets/f69c18a8-9d7a-4a06-8ccb-f024a06017f5)
-
+![image](https://github.com/user-attachments/assets/f69c18a8-9d7a-4a06-8ccb-f024a06017f5)![image](https://github.com/user-attachments/assets/2cdc1e2e-c400-42ba-9e22-e2fd37a8fc60)![image](https://github.com/user-attachments/assets/93ff4d5b-c982-41e4-96ce-533426725390)
 ### [MathsApp](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/MathsApp)
 ![image](https://github.com/user-attachments/assets/ef02e558-01dc-4804-9b5b-d32c1a43d1ae)![image](https://github.com/user-attachments/assets/f3468c3d-b932-4c5b-9beb-f72e53f1a0c4)![image](https://github.com/user-attachments/assets/6d115f84-a3b6-4d43-8094-0095164df84a)![image](https://github.com/user-attachments/assets/746489f0-b3f1-40ad-bed3-3188b79e87d9)
 
