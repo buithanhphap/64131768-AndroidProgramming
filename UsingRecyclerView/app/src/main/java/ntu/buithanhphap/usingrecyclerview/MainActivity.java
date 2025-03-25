@@ -25,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
         //4
         recyclerViewLandscape = findViewById(R.id.recyclerland);
         //5
-        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
-        recyclerViewLandscape.setLayoutManager(layoutLinear);
+        //RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
+        //recyclerViewLandscape.setLayoutManager(layoutLinear);
+        RecyclerView.LayoutManager layoutLinearHorizonal = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recyclerViewLandscape.setLayoutManager(layoutLinearHorizonal);
         //6
         landScapeAdapter = new LandScapeAdapter(this, recyclerViewDatas);
         //7
