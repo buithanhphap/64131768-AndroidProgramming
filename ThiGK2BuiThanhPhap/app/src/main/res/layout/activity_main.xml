@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imgAnh"
         android:layout_width="391dp"
-        android:layout_height="307dp"
+        android:layout_height="309dp"
         android:layout_marginStart="3dp"
         android:scaleType="centerCrop"
         android:src="@drawable/Logo50Nam"
@@ -23,39 +23,67 @@
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="82dp"
+        android:layout_width="133dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="76dp"
         android:text="Chức năng 2"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgAnh" />
 
     <Button
         android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="133dp"
+        android:layout_height="83dp"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="79dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="44dp"
+        android:backgroundTint="@color/yellow"
         android:text="Chức năng 3"
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btn1"
         app:layout_constraintTop_toBottomOf="@+id/imgAnh" />
 
     <Button
         android:id="@+id/btn3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="133dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="56dp"
         android:text="Chức năng 4"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="497dp" />
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="212dp"
-        tools:layout_editor_absoluteY="495dp" />
+        android:id="@+id/btn4"
+        android:layout_width="133dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="70dp"
+        android:backgroundTint="@color/yellow"
+        android:text="About Me"
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btn3"
+        app:layout_constraintTop_toBottomOf="@+id/btn2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
