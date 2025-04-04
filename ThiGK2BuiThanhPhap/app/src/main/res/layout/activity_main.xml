@@ -13,7 +13,7 @@
         android:layout_height="309dp"
         android:layout_marginStart="3dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/Logo50Nam"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
