@@ -19,5 +19,10 @@ public class Item1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item1);
+        edtNgay = findViewById(R.id.edtNgay);
+        edtThang = findViewById(R.id.edtThang);
+        edtNam = findViewById(R.id.edtNam);
+        btnKiemTra = findViewById(R.id.btnKiemTra);
+        tvKetQua = findViewById(R.id.tvKetQua);
     }
 }
