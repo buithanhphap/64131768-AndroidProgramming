@@ -7,4 +7,97 @@
     android:layout_height="match_parent"
     tools:context=".Item1Activity">
 
+    <ImageView
+        android:id="@+id/imgAnh"
+        android:layout_width="407dp"
+        android:layout_height="285dp"
+        android:layout_marginStart="3dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/anh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:text="Tháng"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAnh" />
+
+    <EditText
+        android:id="@+id/edtThang"
+        android:layout_width="276dp"
+        android:layout_height="66dp"
+        android:background="@drawable/custom_edittext"
+        android:drawablePadding="10dp"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/cardview_dark_background"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="332dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:text="Năm"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edtNam"
+        android:layout_width="276dp"
+        android:layout_height="66dp"
+        android:background="@drawable/custom_edittext"
+        android:drawablePadding="10dp"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/cardview_dark_background"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="416dp" />
+
+    <Button
+        android:id="@+id/btnKiemTra"
+        android:layout_width="239dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="86dp"
+        android:backgroundTint="@color/yellow"
+        android:text="Kiểm tra Đúng/Sai"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNam" />
+
+    <TextView
+        android:id="@+id/tvKetQua"
+        android:layout_width="232dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="128dp"
+        android:text="Hiện kết quả ở đây"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnKiemTra" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
