@@ -1,6 +1,7 @@
 package thigk2.buithanhphap.thigk2buithanhphap;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,16 +10,16 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Item3Activity extends AppCompatActivity {
-
+    TextView tvTenBaiHat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item3);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        tvTenBaiHat = findViewById(R.id.tvTenBaiHat);
+
+        // Nhận dữ liệu từ Intent
+        String tenBaiHat = getIntent().getStringExtra("tenBaiHat");
+        // Hiển thị lên TextView
+        tvTenBaiHat.setText("Tên bài hát: " + tenBaiHat);
     }
 }
