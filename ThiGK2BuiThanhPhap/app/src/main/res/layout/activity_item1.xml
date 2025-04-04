@@ -25,32 +25,37 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="53dp"
         android:text="Tháng"
-        android:textSize="25dp"
+        android:textSize="26dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgAnh" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <EditText
         android:id="@+id/edtThang"
         android:layout_width="276dp"
         android:layout_height="66dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/custom_edittext"
         android:drawablePadding="10dp"
         android:padding="8dp"
         android:textColor="@color/black"
         android:textColorHighlight="@color/cardview_dark_background"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="332dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/edtNgay"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="59dp"
         android:text="Năm"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -61,20 +66,25 @@
         android:id="@+id/edtNam"
         android:layout_width="276dp"
         android:layout_height="66dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/custom_edittext"
         android:drawablePadding="10dp"
         android:padding="8dp"
         android:textColor="@color/black"
         android:textColorHighlight="@color/cardview_dark_background"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="416dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/edtThang"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnKiemTra"
         android:layout_width="239dp"
         android:layout_height="60dp"
         android:layout_marginStart="86dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="86dp"
         android:backgroundTint="@color/yellow"
         android:text="Kiểm tra Đúng/Sai"
@@ -82,6 +92,7 @@
         android:textSize="20sp"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNam" />
 
@@ -90,14 +101,45 @@
         android:layout_width="232dp"
         android:layout_height="70dp"
         android:layout_marginStart="114dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="128dp"
+        android:gravity="center"
         android:text="Hiện kết quả ở đây"
         android:textAlignment="center"
-        android:gravity="center"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnKiemTra" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:text="Ngày"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAnh">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/edtNgay"
+        android:layout_width="276dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/custom_edittext"
+        android:drawablePadding="10dp"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/cardview_dark_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/imgAnh" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
