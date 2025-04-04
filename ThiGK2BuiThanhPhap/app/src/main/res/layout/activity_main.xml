@@ -7,13 +7,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imgAnh"
+        android:layout_width="391dp"
+        android:layout_height="307dp"
+        android:layout_marginStart="3dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/Logo50Nam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Button"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="389dp" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="220dp"
+        tools:layout_editor_absoluteY="386dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="497dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="212dp"
+        tools:layout_editor_absoluteY="495dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
