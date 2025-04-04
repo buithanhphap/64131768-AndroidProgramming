@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvTenxe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên Xe"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <ImageView
+        android:id="@+id/imgageXe"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/bong1" />
+</LinearLayout>

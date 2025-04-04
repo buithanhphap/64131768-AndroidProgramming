@@ -1,5 +1,6 @@
 package vn.buithanhphap.a64131768_thigiuakytest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -41,7 +42,10 @@ public class Cau2Activity extends AppCompatActivity {
                 String giaTriDuocChon = dsOto.get(position);
                 //làm gì đó với giá trị này thì tùy
                 //đơn giản, ta Toast lên
-                Toast.makeText(Cau2Activity.this, giaTriDuocChon, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Cau2Activity.this, giaTriDuocChon, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Cau2Activity.this, ChiTietActivity.class);
+                intent.putExtra("tenXe", giaTriDuocChon);
+                startActivity(intent);
             }
         });
     }
