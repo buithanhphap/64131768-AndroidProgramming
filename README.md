@@ -8,6 +8,10 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ![image](https://github.com/user-attachments/assets/afca3c68-0e29-4fb9-86ee-51ee600e7efa)
 ![image](https://github.com/user-attachments/assets/e8ef5704-7f19-475d-b5fb-527b33ac8e52)
 ![image](https://github.com/user-attachments/assets/afd996b2-17f4-43fa-bd8b-c134fd753e24)
+![image](https://github.com/user-attachments/assets/d71c00fc-ac9f-4885-85ec-3b5958516c7f)
+![image](https://github.com/user-attachments/assets/a6f2f6f1-4558-43ce-90af-b945e3ab6b3b)
+
+
 
 
 ### [UsingRecyclerView](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/UsingRecyclerView)
