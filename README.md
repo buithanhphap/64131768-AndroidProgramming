@@ -4,15 +4,18 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
   
 ## Đây là kho lưu trữ bài tập khi tôi làm bài tập lớn và nhỏ, đây là kho lưu trữ tham khảo, không phải dự án lâu dài hoặc có thể sử dụng.
 
+### [FragmentEx_Statically](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/FragmentEx_Statically)
+![image](https://github.com/user-attachments/assets/4e0e464e-f555-46a7-a873-b3c55fd007c9)
+
+### [FragmentExAddDynamic](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/FragmentExAddDynamic)
+![image](https://github.com/user-attachments/assets/6fdb4581-f19d-46ab-a2db-ab18c353da82)
+
 ### [ThiGK2BuiThanhPhap](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/ThiGK2BuiThanhPhap)
 ![image](https://github.com/user-attachments/assets/afca3c68-0e29-4fb9-86ee-51ee600e7efa)
 ![image](https://github.com/user-attachments/assets/e8ef5704-7f19-475d-b5fb-527b33ac8e52)
 ![image](https://github.com/user-attachments/assets/afd996b2-17f4-43fa-bd8b-c134fd753e24)
 ![image](https://github.com/user-attachments/assets/d71c00fc-ac9f-4885-85ec-3b5958516c7f)
 ![image](https://github.com/user-attachments/assets/a6f2f6f1-4558-43ce-90af-b945e3ab6b3b)
-
-
-
 
 ### [UsingRecyclerView](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/UsingRecyclerView)
 ![image](https://github.com/user-attachments/assets/f69c18a8-9d7a-4a06-8ccb-f024a06017f5)![image](https://github.com/user-attachments/assets/2cdc1e2e-c400-42ba-9e22-e2fd37a8fc60)![image](https://github.com/user-attachments/assets/93ff4d5b-c982-41e4-96ce-533426725390)
