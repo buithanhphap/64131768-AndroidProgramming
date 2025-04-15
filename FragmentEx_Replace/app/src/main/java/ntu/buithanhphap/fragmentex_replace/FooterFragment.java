@@ -36,21 +36,27 @@ public class FooterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //code here
-
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView_Content, new Fragment1())
+                        .commit();
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //code here
-
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView_Content, new Fragment2())
+                        .commit();
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //code here
-
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView_Content, new Fragment3())
+                        .commit();
             }
         });
         return v;
