@@ -4,6 +4,9 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
   
 ## Đây là kho lưu trữ bài tập khi tôi làm bài tập lớn và nhỏ, đây là kho lưu trữ tham khảo, không phải dự án lâu dài hoặc có thể sử dụng.
 
+### [FragmentEx_Replace](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/FragmentEx_Replace)
+![image](https://github.com/user-attachments/assets/935d05ab-b29c-446d-96e4-7b62e3ec4e88)![image](https://github.com/user-attachments/assets/4ae10b47-75e3-43a3-a42d-6c681d2dd8c7)![image](https://github.com/user-attachments/assets/0215ad41-9cd3-4ee6-84fd-e70f52eb4c63)
+
 ### [FragmentEx_Statically](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/FragmentEx_Statically)
 ![image](https://github.com/user-attachments/assets/4e0e464e-f555-46a7-a873-b3c55fd007c9)
 
