@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -31,19 +32,29 @@ public class MainActivity extends AppCompatActivity {
                 if(mnuItemDuocChonID == R.id.mnu_home)
                 {
                     // Thay fragment Home
-                    Toast.makeText(MainActivity.this, "Thay HOME", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(MainActivity.this, "Thay HOME", Toast.LENGTH_LONG).show();
+                    replaceFragment(new Fragment(R.layout.fragment_home));
                 }else
                     if (mnuItemDuocChonID == R.id.mnu_search)
                     {
-                        Toast.makeText(MainActivity.this, "Thay SEARCH", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MainActivity.this, "Thay SEARCH", Toast.LENGTH_LONG).show();
+                        replaceFragment(new Fragment(R.layout.fragment_search));
                     }else
                         if (mnuItemDuocChonID == R.id.mnu_profile)
                         {
-                            Toast.makeText(MainActivity.this, "Thay PROFILE", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(MainActivity.this, "Thay PROFILE", Toast.LENGTH_LONG).show();
+                            replaceFragment(new Fragment(R.layout.fragment_profile));
                         }else
                             return false;
                 return true;
             }
         });
+
+    }
+    private void replaceFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragmentContainerView, fragment)
+                .commit();
     }
 }
