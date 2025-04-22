@@ -18,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNav;
+    Fragment selectedFragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,28 +34,27 @@ public class MainActivity extends AppCompatActivity {
                 {
                     // Thay fragment Home
                     //Toast.makeText(MainActivity.this, "Thay HOME", Toast.LENGTH_LONG).show();
-                    replaceFragment(new Fragment(R.layout.fragment_home));
+                    selectedFragment = new HomeFragment();
                 }else
                     if (mnuItemDuocChonID == R.id.mnu_search)
                     {
                         //Toast.makeText(MainActivity.this, "Thay SEARCH", Toast.LENGTH_LONG).show();
-                        replaceFragment(new Fragment(R.layout.fragment_search));
+                        selectedFragment = new SearchFragment();
                     }else
                         if (mnuItemDuocChonID == R.id.mnu_profile)
                         {
                             //Toast.makeText(MainActivity.this, "Thay PROFILE", Toast.LENGTH_LONG).show();
-                            replaceFragment(new Fragment(R.layout.fragment_profile));
-                        }else
-                            return false;
-                return true;
+                            selectedFragment = new ProfileFragment();
+                        }
+                if (selectedFragment != null) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainerView, selectedFragment)
+                            .commit();
+                    return true;
+                }
+                return false;
             }
         });
 
-    }
-    private void replaceFragment(Fragment fragment) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragmentContainerView, fragment)
-                .commit();
     }
 }
