@@ -8,26 +8,27 @@
     android:background="@drawable/nen"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:gravity="center"
+    <ImageView
+        android:layout_width="235dp"
+        android:layout_height="188dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="106dp"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:text="Chơi"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="305dp">
+    </Button>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/logo">
-        </ImageView>
-    </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="409dp"
-        android:layout_height="559dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="171dp">
-
-    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
