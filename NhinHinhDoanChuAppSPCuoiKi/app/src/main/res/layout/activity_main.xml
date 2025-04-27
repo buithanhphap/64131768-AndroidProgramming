@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="235dp"
         android:layout_height="188dp"
         android:layout_marginStart="105dp"
@@ -17,18 +18,51 @@
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </ImageView>
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnChoi"
         android:layout_width="150dp"
         android:layout_height="70dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="131dp"
+        android:backgroundTint="@color/green"
         android:text="Chơi"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="305dp">
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
     </Button>
+
+
+    <Button
+        android:id="@+id/btnThoat"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="131dp"
+        android:backgroundTint="@color/red"
+        android:text="Thoát"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="508dp" />
+
+    <Button
+        android:id="@+id/btnLuatChoi"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:text="Luật chơi"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="405dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
