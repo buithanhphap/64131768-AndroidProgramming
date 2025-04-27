@@ -1,6 +1,8 @@
 package ntu.buithanhphap.nhinhinhdoanchuappspcuoiki;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -19,5 +21,28 @@ public class MainActivity extends AppCompatActivity {
         btnChoi = findViewById(R.id.btnChoi);
         btnLuatchoi = findViewById(R.id.btnLuatChoi);
         btnThoat = findViewById(R.id.btnThoat);
+        //Xử lý sự kiện nút chơi
+        btnChoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PlayGameActivity.class);
+                startActivity(intent);
+            }
+        });
+        //Xử lý sự kiện nút luật chơi
+        btnLuatchoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RulesActivity.class);
+                startActivity(intent);
+            }
+        });
+        //Xử lý sự kiện nút thoát
+        btnThoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
