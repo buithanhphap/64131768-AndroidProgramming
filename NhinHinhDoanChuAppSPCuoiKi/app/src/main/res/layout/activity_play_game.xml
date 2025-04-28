@@ -7,48 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".PlayGameActivity">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/green"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="409dp"
+        android:layout_height="256dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/purple"
-        android:minHeight="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
-    </RelativeLayout>
+        app:srcCompat="@drawable/hinh1"
+        tools:layout_editor_absoluteY="86dp"></ImageView>
 </androidx.constraintlayout.widget.ConstraintLayout>
