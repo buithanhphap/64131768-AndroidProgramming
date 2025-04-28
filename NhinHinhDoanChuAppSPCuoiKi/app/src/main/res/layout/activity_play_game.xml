@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nen"
     tools:context=".PlayGameActivity">
 
     <ImageView
@@ -31,11 +32,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
     <GridView
         android:id="@+id/gdvNhapDapAn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="15dp"
         android:layout_marginEnd="1dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"

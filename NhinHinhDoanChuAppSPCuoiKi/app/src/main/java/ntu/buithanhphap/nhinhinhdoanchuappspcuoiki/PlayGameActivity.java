@@ -39,6 +39,7 @@ public class PlayGameActivity extends AppCompatActivity {
         ArrNhapDapAn.add("E");
         ArrNhapDapAn.add("A");
         ArrNhapDapAn.add("O");
+        ArrNhapDapAn.add("O");
         // Set số cột bằng đúng số lượng phần tử => nằm ngang
         gdvDapAn.setNumColumns(ArrDapAn.size());
         // Gán adapter
