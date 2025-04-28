@@ -1,6 +1,7 @@
 package ntu.buithanhphap.nhinhinhdoanchuappspcuoiki;
 
 import android.os.Bundle;
+import android.widget.GridView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,15 +13,12 @@ import java.util.ArrayList;
 
 public class PlayGameActivity extends AppCompatActivity {
     ArrayList<String> ArrDapAn;
+    GridView gdvDapAn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_play_game);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        //Tim dieu khien
+        gdvDapAn = findViewById(R.id.gdvDapAn);
     }
 }
