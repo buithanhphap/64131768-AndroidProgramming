@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class PlayGameActivity extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class PlayGameActivity extends AppCompatActivity {
     GridView gdvDapAn;
     ArrayList<String> ArrNhapDapAn;
     GridView gdvNhapDapAn;
-     private String dapAn="cadao";
+     private String dapAn="CADAO";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +41,25 @@ public class PlayGameActivity extends AppCompatActivity {
     }
     private void HienDungODapAn() {
         ArrDapAn.clear();
+        ArrNhapDapAn.clear();
         Random random = new Random();
-        for(int i=0;i<dapAn.length();i++) {
+
+        // Khởi tạo arrDapAn với các ô trống
+        for (int i = 0; i < dapAn.length(); i++) {
             ArrDapAn.add("");
-            String c = "" + (char)(random.nextInt(26)+65);
-            ArrNhapDapAn.add(c);
-            String c1 = "" + (char)(random.nextInt(26)+65);
-            ArrNhapDapAn.add(c1);
         }
+
+        // Thêm các ký tự của dapAn (chữ hoa) vào arrNhapDapAn
+        for (int i = 0; i < dapAn.length(); i++) {
+            ArrNhapDapAn.add(String.valueOf(dapAn.charAt(i)).toUpperCase());
+        }
+
+        // Thêm các ký tự ngẫu nhiên từ A đến Z để đủ 10 ký tự
+        while (ArrNhapDapAn.size() < 10) {
+            char randomChar = (char) ('A' + random.nextInt(26));
+            ArrNhapDapAn.add(String.valueOf(randomChar));
+        }
+        // Xáo trộn các ký tự trong ArrNhapDapAn
+        Collections.shuffle(ArrNhapDapAn);
     }
 }
