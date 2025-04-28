@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class PlayGameActivity extends AppCompatActivity {
     ArrayList<String> ArrDapAn;
     GridView gdvDapAn;
+    ArrayList<String> ArrNhapDapAn;
+    GridView gdvNhapDapAn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
