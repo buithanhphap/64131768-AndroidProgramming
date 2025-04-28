@@ -8,8 +8,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class PlayGameActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class PlayGameActivity extends AppCompatActivity {
+    ArrayList<String> ArrDapAn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
