@@ -20,5 +20,11 @@ public class PlayGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play_game);
         //Tim dieu khien
         gdvDapAn = findViewById(R.id.gdvDapAn);
+        ArrDapAn = new ArrayList<>();
+        ArrDapAn.add("D");
+        ArrDapAn.add("D");
+        ArrDapAn.add("D");
+        ArrDapAn.add("D");
+        ArrDapAn.add("D");
     }
 }
