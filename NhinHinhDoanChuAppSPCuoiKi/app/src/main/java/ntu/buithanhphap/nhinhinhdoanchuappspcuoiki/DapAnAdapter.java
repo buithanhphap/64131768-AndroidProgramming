@@ -1,9 +1,13 @@
 package ntu.buithanhphap.nhinhinhdoanchuappspcuoiki;
 
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,5 +19,15 @@ public class DapAnAdapter extends ArrayAdapter<String> {
         super(context, resource, objects);
         this.context = context;
         this.arr = new ArrayList<>(objects);
+    }
+
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        if(convertView == null) {
+            LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.tra_loi, null);
+        }
+        return convertView;
     }
 }
