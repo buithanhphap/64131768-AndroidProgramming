@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class PlayGameActivity extends AppCompatActivity {
     ArrayList<String> ArrDapAn;
@@ -26,16 +27,8 @@ public class PlayGameActivity extends AppCompatActivity {
         gdvNhapDapAn = findViewById(R.id.gdvNhapDapAn);
         // Khởi tạo dữ liệu
         ArrDapAn = new ArrayList<>();
-        HienDungODapAn();
         ArrNhapDapAn = new ArrayList<>();
-        ArrNhapDapAn.add("A");
-        ArrNhapDapAn.add("B");
-        ArrNhapDapAn.add("C");
-        ArrNhapDapAn.add("D");
-        ArrNhapDapAn.add("E");
-        ArrNhapDapAn.add("A");
-        ArrNhapDapAn.add("O");
-        ArrNhapDapAn.add("O");
+        HienDungODapAn();
         // Set số cột bằng đúng số lượng phần tử => nằm ngang
         gdvDapAn.setNumColumns(ArrDapAn.size());
         // Gán adapter
@@ -47,8 +40,13 @@ public class PlayGameActivity extends AppCompatActivity {
     }
     private void HienDungODapAn() {
         ArrDapAn.clear();
+        Random random = new Random();
         for(int i=0;i<dapAn.length();i++) {
             ArrDapAn.add("");
+            String c = "" + (char)(random.nextInt(26)+65);
+            ArrNhapDapAn.add(c);
+            String c1 = "" + (char)(random.nextInt(26)+65);
+            ArrNhapDapAn.add(c1);
         }
     }
 }
