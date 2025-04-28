@@ -12,12 +12,12 @@
         android:layout_width="387dp"
         android:layout_height="240dp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="91dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/hinh1"
-        tools:layout_editor_absoluteY="91dp">
-    </ImageView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hinh1"></ImageView>
 
     <GridView
         android:layout_width="match_parent"
