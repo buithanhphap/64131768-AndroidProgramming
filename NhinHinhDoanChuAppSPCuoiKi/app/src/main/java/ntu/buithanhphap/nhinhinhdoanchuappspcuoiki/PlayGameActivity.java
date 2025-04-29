@@ -5,11 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,6 +18,7 @@ public class PlayGameActivity extends AppCompatActivity {
     GridView gdvNhapDapAn;
      private String dapAn="CADAO";
      int index = 0;
+    ArrayList<Integer> ViTriBanDau;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +30,7 @@ public class PlayGameActivity extends AppCompatActivity {
         // Khởi tạo dữ liệu
         ArrDapAn = new ArrayList<>();
         ArrNhapDapAn = new ArrayList<>();
+        ViTriBanDau = new ArrayList<>();
         HienDungODapAn();
         // Set số cột bằng đúng số lượng phần tử => nằm ngang
         gdvDapAn.setNumColumns(ArrDapAn.size());
