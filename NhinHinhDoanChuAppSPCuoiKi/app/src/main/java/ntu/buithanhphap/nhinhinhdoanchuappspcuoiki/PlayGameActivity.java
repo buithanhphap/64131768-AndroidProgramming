@@ -13,6 +13,8 @@ import java.util.Collections;
 import java.util.Random;
 
 public class PlayGameActivity extends AppCompatActivity {
+    PlayGameModel models;
+    HinhCauHoi hinhCauHoi;
     ArrayList<String> ArrDapAn;
     GridView gdvDapAn;
     ArrayList<String> ArrNhapDapAn;
@@ -29,18 +31,11 @@ public class PlayGameActivity extends AppCompatActivity {
         gdvNhapDapAn = findViewById(R.id.gdvNhapDapAn);
         OnClick();
         // Khởi tạo dữ liệu
+        models = new PlayGameModel(this);
         ArrDapAn = new ArrayList<>();
         ArrNhapDapAn = new ArrayList<>();
         ViTriBanDau = new ArrayList<>();
-        HienDungODapAn();
-        // Set số cột bằng đúng số lượng phần tử => nằm ngang
-        gdvDapAn.setNumColumns(ArrDapAn.size());
-        // Gán adapter
-        gdvDapAn.setAdapter(new DapAnAdapter(this, 0, ArrDapAn));
-        // Set số cột bằng đúng số lượng phần tử => nằm ngang
-        gdvNhapDapAn.setNumColumns(ArrNhapDapAn.size()/2);
-        // Gán adapter
-        gdvNhapDapAn.setAdapter(new DapAnAdapter(this, 0, ArrNhapDapAn));
+        HienHinhCauHoi();
     }
     private void HienDungODapAn() {
         ArrDapAn.clear();
@@ -126,8 +121,22 @@ public class PlayGameActivity extends AppCompatActivity {
         c = c.toUpperCase();
         if(c.equals(dapAn.toUpperCase())){
             Toast.makeText(this, "Bạn đã trả lời đúng",Toast.LENGTH_SHORT).show();
+            HienHinhCauHoi();
         } else {
             Toast.makeText(this, "Câu trả lời của bạn đã sai", Toast.LENGTH_SHORT).show();
         }
+    }
+    private void HienHinhCauHoi(){
+        hinhCauHoi = models.LayHinhCauHoi();
+        dapAn = hinhCauHoi.dapAn;
+        HienDungODapAn();
+        // Set số cột bằng đúng số lượng phần tử => nằm ngang
+        gdvDapAn.setNumColumns(ArrDapAn.size());
+        // Gán adapter
+        gdvDapAn.setAdapter(new DapAnAdapter(this, 0, ArrDapAn));
+        // Set số cột bằng đúng số lượng phần tử => nằm ngang
+        gdvNhapDapAn.setNumColumns(ArrNhapDapAn.size()/2);
+        // Gán adapter
+        gdvNhapDapAn.setAdapter(new DapAnAdapter(this, 0, ArrNhapDapAn));
     }
 }
