@@ -44,11 +44,13 @@ public class PlayGameActivity extends AppCompatActivity {
     private void HienDungODapAn() {
         ArrDapAn.clear();
         ArrNhapDapAn.clear();
+        ViTriBanDau.clear();
         Random random = new Random();
 
         // Khởi tạo arrDapAn với các ô trống
         for (int i = 0; i < dapAn.length(); i++) {
             ArrDapAn.add("");
+            ViTriBanDau.add(-1);
         }
 
         // Thêm các ký tự của dapAn (chữ hoa) vào arrNhapDapAn
@@ -75,6 +77,7 @@ public class PlayGameActivity extends AppCompatActivity {
                     }
                     ArrNhapDapAn.set(position,"");
                     ArrDapAn.set(index,c);
+                    ViTriBanDau.set(index, position);
                     index++;
                     // Cập nhật lại adapter
                     gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
@@ -89,6 +92,11 @@ public class PlayGameActivity extends AppCompatActivity {
                 if( c.length() != 0){
                     // Xóa ký tự tại vị trí được chọn
                     ArrDapAn.set(position, "");
+                    // Trả ký tự về đúng vị trí ban đầu trong ArrNhapDapAn
+                    int vitribd = ViTriBanDau.get(position);
+                    if (vitribd != -1) {
+                        ArrNhapDapAn.set(vitribd, c);
+                    }
                     // Tìm vị trí trống đầu tiên từ trái sang phải để đặt lại index
                     index = 0;
                     for (int i = 0; i < ArrDapAn.size(); i++) {
@@ -97,12 +105,8 @@ public class PlayGameActivity extends AppCompatActivity {
                             break;
                         }
                     }
-                    for(int i=0;i<ArrNhapDapAn.size();i++) {
-                        if(ArrNhapDapAn.get(i).length()==0) {
-                            ArrNhapDapAn.set(i,c);
-                            break;
-                        }
-                    }
+                    // Đặt lại vị trí gốc của ô này
+                    ViTriBanDau.set(position, -1);
                     // Cập nhật lại adapter
                     gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
                     gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
