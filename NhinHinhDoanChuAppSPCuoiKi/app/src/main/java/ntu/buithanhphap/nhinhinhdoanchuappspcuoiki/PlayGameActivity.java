@@ -81,5 +81,24 @@ public class PlayGameActivity extends AppCompatActivity {
                 }
             }
         });
+        gdvDapAn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String c = (String) parent.getItemAtPosition(position);
+                if( c.length() != 0){
+                    index =position;
+                    ArrDapAn.set(position,"");
+                    for(int i=0;i<ArrNhapDapAn.size();i++) {
+                        if(ArrNhapDapAn.get(i).length()==0) {
+                            ArrNhapDapAn.set(i,c);
+                            break;
+                        }
+                    }
+                    // Cập nhật lại adapter
+                    gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
+                    gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
+                }
+            }
+        });
     }
 }
