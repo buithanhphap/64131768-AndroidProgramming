@@ -11,6 +11,6 @@ public class PlayGameModel {
     }
     private void khoiTaoDaTa() {
         arr = new ArrayList<>();
-
+        arr.add(new HinhCauHoi("","",""));
     }
 }
