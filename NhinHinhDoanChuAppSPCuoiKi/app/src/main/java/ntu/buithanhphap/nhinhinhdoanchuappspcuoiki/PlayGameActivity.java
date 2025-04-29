@@ -72,6 +72,9 @@ public class PlayGameActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String c = (String) parent.getItemAtPosition(position);
                 if( c.length() != 0 && index<ArrDapAn.size()){
+                    if(ArrDapAn.get(index).length()!=0) {
+                        return;
+                    }
                     ArrNhapDapAn.set(position,"");
                     ArrDapAn.set(index,c);
                     index++;
