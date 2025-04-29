@@ -43,6 +43,7 @@ public class PlayGameActivity extends AppCompatActivity {
         HienHinhCauHoi();
     }
     private void HienDungODapAn() {
+        index =0;
         ArrDapAn.clear();
         ArrNhapDapAn.clear();
         ViTriBanDau.clear();
@@ -126,6 +127,7 @@ public class PlayGameActivity extends AppCompatActivity {
         c = c.toUpperCase();
         if(c.equals(dapAn.toUpperCase())){
             Toast.makeText(this, "Bạn đã trả lời đúng",Toast.LENGTH_SHORT).show();
+            models.NextCauHoi();
             HienHinhCauHoi();
         } else {
             Toast.makeText(this, "Câu trả lời của bạn đã sai", Toast.LENGTH_SHORT).show();

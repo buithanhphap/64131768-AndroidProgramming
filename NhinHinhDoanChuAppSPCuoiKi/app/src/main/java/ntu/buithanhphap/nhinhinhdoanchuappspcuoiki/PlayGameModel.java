@@ -16,11 +16,12 @@ public class PlayGameModel {
         arr = new ArrayList<>();
         arr.add(new HinhCauHoi("Màn 1", "yeuot", "https://freetuts.net/upload/product_series/images/2022/11/16/2598/nhin-hinh-doan-chu-60.jpg"));
         arr.add(new HinhCauHoi("Màn 2", "baocao", "https://freetuts.net/upload/product_series/images/2022/11/16/2598/nhin-hinh-doan-chu-2.jpg"));
+        arr.add(new HinhCauHoi("Màn 3", "cadao", "https://i.ytimg.com/vi/rHtDfzSPZfc/maxresdefault.jpg"));
     }
 
     public HinhCauHoi LayHinhCauHoi() {
         if (cauSo >= arr.size()) {
-            cauSo = arr.size() - 1; 
+            cauSo = arr.size() - 1;
         }
         return arr.get(cauSo);
     }
