@@ -89,8 +89,16 @@ public class PlayGameActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String c = (String) parent.getItemAtPosition(position);
                 if( c.length() != 0){
-                    index =position;
-                    ArrDapAn.set(position,"");
+                    // Xóa ký tự tại vị trí được chọn
+                    ArrDapAn.set(position, "");
+                    // Tìm vị trí trống đầu tiên từ trái sang phải để đặt lại index
+                    index = 0;
+                    for (int i = 0; i < ArrDapAn.size(); i++) {
+                        if (ArrDapAn.get(i).length() == 0) {
+                            index = i;
+                            break;
+                        }
+                    }
                     for(int i=0;i<ArrNhapDapAn.size();i++) {
                         if(ArrNhapDapAn.get(i).length()==0) {
                             ArrNhapDapAn.set(i,c);
