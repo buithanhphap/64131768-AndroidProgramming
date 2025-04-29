@@ -21,6 +21,7 @@ public class PlayGameActivity extends AppCompatActivity {
     ArrayList<String> ArrNhapDapAn;
     GridView gdvNhapDapAn;
      private String dapAn="CADAO";
+     int index = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class PlayGameActivity extends AppCompatActivity {
         //Tim dieu khien
         gdvDapAn = findViewById(R.id.gdvDapAn);
         gdvNhapDapAn = findViewById(R.id.gdvNhapDapAn);
+        OnClick();
         // Khởi tạo dữ liệu
         ArrDapAn = new ArrayList<>();
         ArrNhapDapAn = new ArrayList<>();
@@ -69,6 +71,14 @@ public class PlayGameActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String c = (String) parent.getItemAtPosition(position);
+                if( c.length() != 0 && index<ArrDapAn.size()){
+                    ArrNhapDapAn.set(position,"");
+                    ArrDapAn.set(index,c);
+                    index++;
+                    // Cập nhật lại adapter
+                    gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
+                    gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
+                }
             }
         });
     }
