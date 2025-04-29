@@ -10,6 +10,7 @@ public class PlayGameModel {
         this.p = p;
     }
     private void khoiTaoDaTa() {
-        
+        arr = new ArrayList<>();
+
     }
 }
