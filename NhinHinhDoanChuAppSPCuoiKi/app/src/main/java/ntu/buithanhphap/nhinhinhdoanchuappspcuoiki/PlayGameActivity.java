@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -82,6 +83,9 @@ public class PlayGameActivity extends AppCompatActivity {
                     // Cập nhật lại adapter
                     gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
                     gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
+                    if (index == ArrDapAn.size()) {
+                        KiemTraDapAn();
+                    }
                 }
             }
         });
@@ -113,5 +117,17 @@ public class PlayGameActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void KiemTraDapAn(){
+        String c = "";
+        for(String c1:ArrDapAn){
+            c += c1;
+        }
+        c = c.toUpperCase();
+        if(c.equals(dapAn.toUpperCase())){
+            Toast.makeText(this, "Bạn đã trả lời đúng",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Câu trả lời của bạn đã sai", Toast.LENGTH_SHORT).show();
+        }
     }
 }
