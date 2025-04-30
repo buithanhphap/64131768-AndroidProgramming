@@ -14,7 +14,7 @@ public class NguoiChoi {
     }
     public void getTT(Context ct){
         SharedPreferences setting = ct.getSharedPreferences(nameData,0);
-        tien = setting.getInt("tien",20);
+        tien = setting.getInt("tien",0);
     }
 
 }
