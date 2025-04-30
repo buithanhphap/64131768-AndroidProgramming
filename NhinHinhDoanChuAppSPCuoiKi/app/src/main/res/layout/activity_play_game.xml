@@ -17,7 +17,7 @@
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/tvTien"
         app:srcCompat="@drawable/hinh1">
 
     </ImageView>
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/gdvDapAn" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvTien"
         android:layout_width="107dp"
         android:layout_height="53dp"
         android:layout_margin="6dp"
@@ -65,8 +65,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/icon"
-         app:layout_constraintEnd_toStartOf="@id/textView4"
-        app:layout_constraintTop_toTopOf="@id/textView4"
-        app:layout_constraintBottom_toBottomOf="@id/textView4"
+         app:layout_constraintEnd_toStartOf="@id/tvTien"
+        app:layout_constraintTop_toTopOf="@id/tvTien"
+        app:layout_constraintBottom_toBottomOf="@id/tvTien"
          android:layout_marginEnd="-30dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
