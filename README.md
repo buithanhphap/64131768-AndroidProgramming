@@ -5,7 +5,8 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ## Đây là kho lưu trữ bài tập khi tôi làm bài tập lớn và nhỏ, đây là kho lưu trữ tham khảo, không phải dự án lâu dài hoặc có thể sử dụng.
 
 ### [NhinHinhDoanChuAppSPCuoiKi](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/NhinHinhDoanChuAppSPCuoiKi)
-![image](https://github.com/user-attachments/assets/7c357497-b4e5-4fc3-a801-eb0a4bc21d1f)![image](https://github.com/user-attachments/assets/6682b835-04e4-4019-87a8-983880974132)![image](https://github.com/user-attachments/assets/f177f066-8a71-4494-8a5b-becd92112cce)
+![image](https://github.com/user-attachments/assets/7c357497-b4e5-4fc3-a801-eb0a4bc21d1f)![image](https://github.com/user-attachments/assets/6682b835-04e4-4019-87a8-983880974132)![image](https://github.com/user-attachments/assets/5ddbcec8-6a77-4c94-a427-38ca58f359dc)
+
 
 
 ### [bottomNavigationView](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/bottomNavigationView)
