@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,7 @@ public class PlayGameActivity extends AppCompatActivity {
      int index = 0;
     ArrayList<Integer> ViTriBanDau;
     ImageView imgHinhCauHoi;
+    TextView tvTien;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,7 @@ public class PlayGameActivity extends AppCompatActivity {
         gdvDapAn = findViewById(R.id.gdvDapAn);
         gdvNhapDapAn = findViewById(R.id.gdvNhapDapAn);
         imgHinhCauHoi = findViewById(R.id.imgHinhCauHoi);
+        tvTien = findViewById(R.id.tvTien);
         OnClick();
         // Khởi tạo dữ liệu
         models = new PlayGameModel(this);
