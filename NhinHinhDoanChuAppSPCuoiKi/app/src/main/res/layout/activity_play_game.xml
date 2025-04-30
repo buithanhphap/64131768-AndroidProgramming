@@ -89,5 +89,11 @@
         android:src="@drawable/ic_goiy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-    
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_next"
+        tools:layout_editor_absoluteX="345dp"
+        tools:layout_editor_absoluteY="674dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
