@@ -54,8 +54,18 @@
         android:background="@drawable/ic_tien"
         android:gravity="center"
         android:text="10"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imgCoinIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icon"
+         app:layout_constraintEnd_toStartOf="@id/textView4"
+        app:layout_constraintTop_toTopOf="@id/textView4"
+        app:layout_constraintBottom_toBottomOf="@id/textView4"
+         android:layout_marginEnd="-30dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
