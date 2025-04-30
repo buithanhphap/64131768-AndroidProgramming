@@ -35,8 +35,8 @@
 
     <GridView
         android:id="@+id/gdvNhapDapAn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="412dp"
+        android:layout_height="240dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="1dp"
         android:gravity="center"
@@ -79,4 +79,15 @@
         android:src="@drawable/ic_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgHintIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_goiy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
