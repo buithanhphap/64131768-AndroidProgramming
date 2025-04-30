@@ -130,6 +130,9 @@ public class PlayGameActivity extends AppCompatActivity {
         c = c.toUpperCase();
         if(c.equals(dapAn.toUpperCase())){
             Toast.makeText(this, "Bạn đã trả lời đúng",Toast.LENGTH_SHORT).show();
+            models.layThongTin();
+            models.nguoiChoi.tien = models.nguoiChoi.tien + 15;
+            models.luuThongTin();
             models.NextCauHoi();
             HienHinhCauHoi();
         } else {
