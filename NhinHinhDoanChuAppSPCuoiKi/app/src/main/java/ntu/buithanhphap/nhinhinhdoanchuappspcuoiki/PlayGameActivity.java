@@ -1,5 +1,6 @@
 package ntu.buithanhphap.nhinhinhdoanchuappspcuoiki;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -38,6 +39,14 @@ public class PlayGameActivity extends AppCompatActivity {
         imgHinhCauHoi = findViewById(R.id.imgHinhCauHoi);
         tvTien = findViewById(R.id.tvTien);
         imghomeIcon = findViewById(R.id.imgHomeIcon);
+        imghomeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlayGameActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         OnClick();
         // Khởi tạo dữ liệu
         models = new PlayGameModel(this);
