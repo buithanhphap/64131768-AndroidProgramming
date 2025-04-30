@@ -26,7 +26,7 @@ public class PlayGameActivity extends AppCompatActivity {
      private String dapAn="CADAO";
      int index = 0;
     ArrayList<Integer> ViTriBanDau;
-    ImageView imgHinhCauHoi;
+    ImageView imgHinhCauHoi, imghomeIcon;
     TextView tvTien;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class PlayGameActivity extends AppCompatActivity {
         gdvNhapDapAn = findViewById(R.id.gdvNhapDapAn);
         imgHinhCauHoi = findViewById(R.id.imgHinhCauHoi);
         tvTien = findViewById(R.id.tvTien);
+        imghomeIcon = findViewById(R.id.imgHomeIcon);
         OnClick();
         // Khởi tạo dữ liệu
         models = new PlayGameModel(this);
