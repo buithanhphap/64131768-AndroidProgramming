@@ -6,9 +6,11 @@ public class PlayGameModel {
     PlayGameActivity p;
     ArrayList<HinhCauHoi> arr;
     int cauSo = 0;
+    public NguoiChoi nguoiChoi;
 
     public PlayGameModel(PlayGameActivity p) {
         this.p = p;
+        nguoiChoi = new NguoiChoi();
         khoiTaoDaTa();
     }
 
@@ -28,5 +30,11 @@ public class PlayGameModel {
 
     public void NextCauHoi() {
         cauSo++;
+    }
+    public void layThongTin(){
+        nguoiChoi.getTT(p);
+    }
+    public void luuThongTin(){
+        nguoiChoi.saveTT(p);
     }
 }
