@@ -184,5 +184,13 @@ public class PlayGameActivity extends AppCompatActivity {
                 break;
             }
         }
+        ArrDapAn.set(id,goiY);
+        // Cập nhật lại adapter
+        gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
+        gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
+        models.layThongTin();
+        models.nguoiChoi.tien = models.nguoiChoi.tien - 10;
+        models.luuThongTin();
+        tvTien.setText(models.nguoiChoi.tien+"");
     }
 }
