@@ -167,4 +167,22 @@ public class PlayGameActivity extends AppCompatActivity {
         models.layThongTin();
         tvTien.setText(models.nguoiChoi.tien+"");
     }
+
+    public void GoiY(View view) {
+        int id=-1;
+        for(int i=0; i<ArrDapAn.size();i++){
+            if(ArrDapAn.get(i).length()==0){
+                id=i;
+                break;
+            }
+        }
+        String goiY = ""+dapAn.charAt(id);
+        goiY = goiY.toUpperCase();
+        for(int i=0;i<ArrNhapDapAn.size();i++){
+            if(goiY.equals(ArrNhapDapAn.get(i))){
+                ArrNhapDapAn.set(i,"");
+                break;
+            }
+        }
+    }
 }
