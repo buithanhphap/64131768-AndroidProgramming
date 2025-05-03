@@ -7,11 +7,44 @@
     android:layout_height="match_parent"
     android:background="@drawable/nen"
     tools:context=".QuaManMainActivity">
+
+    <View
+        android:id="@+id/ribon"
+        android:layout_width="338dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="223dp"
+        android:background="@drawable/ribon"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/ngoisao"
         android:layout_width="182dp"
         android:layout_height="96dp"
+        android:layout_marginTop="164dp"
         android:background="@drawable/ngoisao"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="173dp" />
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:text="QUÁ ĐỈNH!"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/calsan"
+        app:layout_constraintBottom_toBottomOf="@id/ribon"
+        app:layout_constraintEnd_toEndOf="@id/ribon"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@id/ribon"
+        app:layout_constraintTop_toTopOf="@id/ribon"
+        app:layout_constraintVertical_bias="0.403" />
 </androidx.constraintlayout.widget.ConstraintLayout>
