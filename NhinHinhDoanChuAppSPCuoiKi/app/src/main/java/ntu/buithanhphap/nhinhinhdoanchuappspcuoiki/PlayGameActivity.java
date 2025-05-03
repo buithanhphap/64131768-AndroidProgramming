@@ -86,12 +86,21 @@ public class PlayGameActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String c = (String) parent.getItemAtPosition(position);
-                if( c.length() != 0 && index<ArrDapAn.size()){
-                    if(ArrDapAn.get(index).length()!=0) {
-                        return;
+                if (c.length() != 0 && index < ArrDapAn.size()) {
+                    // Tìm ô trống tiếp theo nếu ô hiện tại đã được điền
+                    if (ArrDapAn.get(index).length() != 0) {
+                        for (int i = 0; i < ArrDapAn.size(); i++) {
+                            if (ArrDapAn.get(i).isEmpty()) {
+                                index = i;
+                                break;
+                            }
+                        }
+                        if (ArrDapAn.get(index).length() != 0) {
+                            return; // Không còn ô trống để nhập
+                        }
                     }
-                    ArrNhapDapAn.set(position,"");
-                    ArrDapAn.set(index,c);
+                    ArrNhapDapAn.set(position, "");
+                    ArrDapAn.set(index, c);
                     ViTriBanDau.set(index, position);
                     index++;
                     // Cập nhật lại adapter
@@ -169,28 +178,90 @@ public class PlayGameActivity extends AppCompatActivity {
     }
 
     public void GoiY(View view) {
-        int id=-1;
-        for(int i=0; i<ArrDapAn.size();i++){
-            if(ArrDapAn.get(i).length()==0){
-                id=i;
-                break;
-            }
-        }
-        String goiY = ""+dapAn.charAt(id);
-        goiY = goiY.toUpperCase();
-        for(int i=0;i<ArrNhapDapAn.size();i++){
-            if(goiY.equals(ArrNhapDapAn.get(i))){
-                ArrNhapDapAn.set(i,"");
-                break;
-            }
-        }
-        ArrDapAn.set(id,goiY);
-        // Cập nhật lại adapter
-        gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
-        gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
+
+        // Kiểm tra số tiền
         models.layThongTin();
-        models.nguoiChoi.tien = models.nguoiChoi.tien - 10;
+        if (models.nguoiChoi.tien < 10) {
+            Toast.makeText(this, "Bạn không đủ tiền! Cần 10 đồng xu để nhận gợi ý.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Kiểm tra xem đã điền hết đáp án chưa
+        boolean allFilled = true;
+        for (String s : ArrDapAn) {
+            if (s.isEmpty()) {
+                allFilled = false;
+                break;
+            }
+        }
+        if (allFilled) {
+            Toast.makeText(this, "Bạn đã điền hết đáp án!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Nếu chưa điền gì (index == 0), chọn ngẫu nhiên một vị trí
+        int pos;
+        Random random = new Random();
+        if (index == 0) {
+            pos = random.nextInt(ArrDapAn.size()); // Chọn ngẫu nhiên một vị trí
+            while (!ArrDapAn.get(pos).isEmpty()) { // Đảm bảo vị trí này trống
+                pos = random.nextInt(ArrDapAn.size());
+            }
+        } else {
+            // Tìm ô trống tiếp theo
+            pos = -1;
+            for (int i = 0; i < ArrDapAn.size(); i++) {
+                if (ArrDapAn.get(i).isEmpty()) {
+                    pos = i;
+                    break;
+                }
+            }
+            if (pos == -1) {
+                Toast.makeText(this, "Không tìm thấy ô trống!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+
+        // Lấy ký tự đúng tại vị trí pos từ dapAn
+        String correctChar = String.valueOf(dapAn.charAt(pos)).toUpperCase();
+
+        // Tìm ký tự này trong ArrNhapDapAn
+        int charPos = -1;
+        for (int i = 0; i < ArrNhapDapAn.size(); i++) {
+            if (ArrNhapDapAn.get(i).equals(correctChar)) {
+                charPos = i;
+                break;
+            }
+        }
+
+        if (charPos == -1) {
+            Toast.makeText(this, "Không tìm thấy ký tự gợi ý trong danh sách!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Điền ký tự gợi ý vào ArrDapAn và xóa khỏi ArrNhapDapAn
+        ArrNhapDapAn.set(charPos, "");
+        ArrDapAn.set(pos, correctChar);
+        ViTriBanDau.set(pos, charPos); // Lưu vị trí gốc để có thể hoàn tác
+        index = pos + 1; // Cập nhật index để chỉ đến ô trống tiếp theo
+        if (index >= ArrDapAn.size()) {
+            index = ArrDapAn.size(); // Đảm bảo index không vượt quá kích thước
+        }
+
+        // Cập nhật adapter
+        gdvDapAn.setAdapter(new DapAnAdapter(this, 0, ArrDapAn));
+        gdvNhapDapAn.setAdapter(new DapAnAdapter(this, 0, ArrNhapDapAn));
+
+        // Kiểm tra nếu đã điền hết đáp án
+        if (index == ArrDapAn.size()) {
+            KiemTraDapAn();
+        }
+
+        // Trừ tiền và cập nhật giao diện
+        models.layThongTin();
+        models.nguoiChoi.tien -= 10;
         models.luuThongTin();
-        tvTien.setText(models.nguoiChoi.tien+"");
+        tvTien.setText(String.valueOf(models.nguoiChoi.tien));
+        Toast.makeText(this, "Đã gợi ý ký tự: " + correctChar, Toast.LENGTH_SHORT).show();
     }
 }
