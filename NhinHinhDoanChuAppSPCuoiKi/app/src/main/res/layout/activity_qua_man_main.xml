@@ -12,11 +12,11 @@
         android:id="@+id/ribon"
         android:layout_width="338dp"
         android:layout_height="114dp"
-        android:layout_marginTop="223dp"
+        android:layout_marginTop="192dp"
         android:background="@drawable/ribon"
         android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,7 @@
         android:id="@+id/ngoisao"
         android:layout_width="182dp"
         android:layout_height="96dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="132dp"
         android:background="@drawable/ngoisao"
         android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,4 +47,12 @@
         app:layout_constraintStart_toStartOf="@id/ribon"
         app:layout_constraintTop_toTopOf="@id/ribon"
         app:layout_constraintVertical_bias="0.403" />
+
+    <View
+        android:id="@+id/ngoisao"
+        android:layout_width="334dp"
+        android:layout_height="341dp"
+        android:background="@drawable/nentrong"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="240dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
