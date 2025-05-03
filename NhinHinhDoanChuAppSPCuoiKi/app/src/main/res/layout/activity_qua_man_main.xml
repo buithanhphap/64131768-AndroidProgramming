@@ -5,8 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nen"
     tools:context=".QuaManMainActivity">
-    <View>
-        
-    </View>
+    <View
+        android:id="@+id/ngoisao"
+        android:layout_width="182dp"
+        android:layout_height="96dp"
+        android:background="@drawable/ngoisao"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="173dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
