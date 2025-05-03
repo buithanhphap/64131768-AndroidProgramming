@@ -9,6 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
@@ -29,6 +33,8 @@ public class PlayGameActivity extends AppCompatActivity {
     ArrayList<Integer> ViTriBanDau;
     ImageView imgHinhCauHoi, imghomeIcon;
     TextView tvTien;
+    // Launcher để nhận kết quả từ QuaManMainActivity
+    private ActivityResultLauncher<Intent> quaManActivityLauncher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +53,19 @@ public class PlayGameActivity extends AppCompatActivity {
                 finish();
             }
         });
+        // Khởi tạo launcher để nhận kết quả từ QuaManMainActivity
+        quaManActivityLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == RESULT_OK) {
+                            // Khi người chơi nhấn "TIẾP TỤC", chuyển sang câu hỏi tiếp theo
+                            models.NextCauHoi();
+                            HienHinhCauHoi();
+                        }
+                    }
+                });
         OnClick();
         // Khởi tạo dữ liệu
         models = new PlayGameModel(this);
@@ -152,8 +171,9 @@ public class PlayGameActivity extends AppCompatActivity {
             models.layThongTin();
             models.nguoiChoi.tien = models.nguoiChoi.tien + 15;
             models.luuThongTin();
-            models.NextCauHoi();
-            HienHinhCauHoi();
+            // Chuyển sang QuaManMainActivity thay vì tự động chuyển câu hỏi
+            Intent intent = new Intent(PlayGameActivity.this, QuaManMainActivity.class);
+            quaManActivityLauncher.launch(intent);
         } else {
             Toast.makeText(this, "Câu trả lời của bạn đã sai", Toast.LENGTH_SHORT).show();
         }
