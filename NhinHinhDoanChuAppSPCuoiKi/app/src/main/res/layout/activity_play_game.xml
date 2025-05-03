@@ -80,6 +80,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvManSo"
+        android:layout_width="97dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="85dp"
+        android:fontFamily="@font/calsan"
+        android:text="Màn 1"
+        android:textColor="@color/purple"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgHomeIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgHomeIcon"
+        app:layout_constraintVertical_bias="0.0" />
+
     <ImageView
         android:id="@+id/imgHintIcon"
         android:layout_width="50dp"
