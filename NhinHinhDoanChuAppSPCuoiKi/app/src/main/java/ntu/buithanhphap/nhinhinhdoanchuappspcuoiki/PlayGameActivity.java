@@ -135,7 +135,7 @@ public class PlayGameActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String c = (String) parent.getItemAtPosition(position);
-                if( c.length() != 0){
+                if(c.length() != 0){
                     // Xóa ký tự tại vị trí được chọn
                     ArrDapAn.set(position, "");
                     // Trả ký tự về đúng vị trí ban đầu trong ArrNhapDapAn
@@ -171,9 +171,15 @@ public class PlayGameActivity extends AppCompatActivity {
             models.layThongTin();
             models.nguoiChoi.tien = models.nguoiChoi.tien + 15;
             models.luuThongTin();
-            // Chuyển sang QuaManMainActivity thay vì tự động chuyển câu hỏi
-            Intent intent = new Intent(PlayGameActivity.this, QuaManMainActivity.class);
-            quaManActivityLauncher.launch(intent);
+            // Chuyển sang QuaManMainActivity nếu còn câu hỏi, hoặc KetThucGameMainActivity nếu hết
+            if (models.cauSo + 1 >= models.arr.size()) {
+                Intent intent = new Intent(PlayGameActivity.this, KetThucGameMainActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Intent intent = new Intent(PlayGameActivity.this, QuaManMainActivity.class);
+                quaManActivityLauncher.launch(intent);
+            }
         } else {
             Toast.makeText(this, "Câu trả lời của bạn đã sai", Toast.LENGTH_SHORT).show();
         }
