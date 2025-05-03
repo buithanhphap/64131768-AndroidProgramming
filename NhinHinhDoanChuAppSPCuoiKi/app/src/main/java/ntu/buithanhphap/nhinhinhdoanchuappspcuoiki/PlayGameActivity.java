@@ -264,4 +264,7 @@ public class PlayGameActivity extends AppCompatActivity {
         tvTien.setText(String.valueOf(models.nguoiChoi.tien));
         Toast.makeText(this, "Đã gợi ý ký tự: " + correctChar, Toast.LENGTH_SHORT).show();
     }
+    public void CauTiepTheo(View view) {
+
+    }
 }
