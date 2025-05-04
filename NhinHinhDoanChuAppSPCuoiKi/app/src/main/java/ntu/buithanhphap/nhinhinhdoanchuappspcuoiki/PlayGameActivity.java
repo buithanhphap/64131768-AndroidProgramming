@@ -28,8 +28,8 @@ public class PlayGameActivity extends AppCompatActivity {
     GridView gdvDapAn;
     ArrayList<String> ArrNhapDapAn;
     GridView gdvNhapDapAn;
-     private String dapAn="CADAO";
-     int index = 0;
+    private String dapAn="CADAO";
+    int index = 0;
     ArrayList<Integer> ViTriBanDau;
     ImageView imgHinhCauHoi, imghomeIcon;
     TextView tvTien, tvMan;
