@@ -202,8 +202,7 @@ public class PlayGameActivity extends AppCompatActivity {
                 .into(imgHinhCauHoi);
         models.layThongTin();
         tvTien.setText(models.nguoiChoi.tien+"");
-        // Cập nhật số màn (tăng từ 1 đến 10 dựa trên models.cauSo)
-        int manSo = Math.min(models.cauSo + 1, 10); // Giới hạn tối đa là 10
+        int manSo = Math.min(models.cauSo + 1, 10);
         tvMan.setText("Màn " + manSo);
     }
 
