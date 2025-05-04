@@ -202,8 +202,6 @@ public class PlayGameActivity extends AppCompatActivity {
                 .into(imgHinhCauHoi);
         models.layThongTin();
         tvTien.setText(models.nguoiChoi.tien+"");
-        int manSo = Math.min(models.cauSo + 1, 10);
-        tvMan.setText("Màn " + manSo);
     }
 
     public void GoiY(View view) {
