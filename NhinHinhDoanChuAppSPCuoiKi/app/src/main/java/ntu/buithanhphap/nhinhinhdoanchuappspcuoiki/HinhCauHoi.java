@@ -11,15 +11,4 @@ public class HinhCauHoi {
         this.dapAn = dapAn;
         this.hinhAnh = hinhAnh;
     }
-    public String getTenNam() {
-        return tenNam;
-    }
-
-    public String getDapAn() {
-        return dapAn;
-    }
-
-    public String getHinhAnh() {
-        return hinhAnh;
-    }
 }
