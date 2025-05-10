@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         battieng = findViewById(R.id.battieng);
         tattieng = findViewById(R.id.tattieng);
         thongtin = findViewById(R.id.thongtin);
+        // Khởi tạo MediaPlayer với file âm thanh
+        mediaPlayer = MediaPlayer.create(this, R.raw.nhac);
+        mediaPlayer.setLooping(true); // Lặp lại âm thanh
+        if (isSoundOn) mediaPlayer.start();
         //Xử lý sự kiện nút chơi
         btnChoi.setOnClickListener(new View.OnClickListener() {
             @Override
