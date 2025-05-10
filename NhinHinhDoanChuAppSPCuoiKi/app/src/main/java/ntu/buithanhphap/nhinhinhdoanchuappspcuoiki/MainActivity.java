@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -75,5 +76,34 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        // Xử lý Tắt tiếng
+        tattieng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isSoundOn && mediaPlayer != null) {
+                    isSoundOn = false;
+                    if (mediaPlayer.isPlaying()) {
+                        mediaPlayer.pause();
+                    }
+                    Toast.makeText(MainActivity.this, "Tắt tiếng thành công!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        // Xử lý hiện Thông tin
+        thongtin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Thông tin ứng dụng");
+                builder.setMessage("Tên game: Nhìn Hình Đoán Chữ\n" +
+                        "Phiên bản: 1.0\n" +
+                        "Email: support@nhinhinhdoanchu.com");
+                builder.setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
     }
+    
 }
