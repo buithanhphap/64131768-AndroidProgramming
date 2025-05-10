@@ -32,7 +32,7 @@ public class PlayGameActivity extends AppCompatActivity {
     int index = 0;
     ArrayList<Integer> ViTriBanDau;
     ImageView imgHinhCauHoi, imghomeIcon;
-    TextView tvTien;
+    TextView tvTien, tvManSo;
     // Launcher để nhận kết quả từ QuaManMainActivity
     private ActivityResultLauncher<Intent> quaManActivityLauncher;
     @Override
@@ -45,6 +45,7 @@ public class PlayGameActivity extends AppCompatActivity {
         imgHinhCauHoi = findViewById(R.id.imgHinhCauHoi);
         tvTien = findViewById(R.id.tvTien);
         imghomeIcon = findViewById(R.id.imgHomeIcon);
+        tvManSo = findViewById(R.id.tvManSo);
         imghomeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
