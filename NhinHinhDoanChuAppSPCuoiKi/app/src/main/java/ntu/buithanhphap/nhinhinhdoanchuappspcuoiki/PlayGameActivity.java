@@ -200,6 +200,7 @@ public class PlayGameActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(hinhCauHoi.hinhAnh)
                 .into(imgHinhCauHoi);
+        tvManSo.setText("Màn " + (models.cauSo + 1)); // Cập nhật tên màn
         models.layThongTin();
         tvTien.setText(models.nguoiChoi.tien+"");
     }
