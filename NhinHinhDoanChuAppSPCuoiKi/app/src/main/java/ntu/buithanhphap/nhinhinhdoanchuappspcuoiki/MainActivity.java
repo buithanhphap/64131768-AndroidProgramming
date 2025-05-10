@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         btnChoi = findViewById(R.id.btnChoi);
         btnLuatchoi = findViewById(R.id.btnLuatChoi);
         btnThoat = findViewById(R.id.btnThoat);
+        battieng = findViewById(R.id.battieng);
+        tattieng = findViewById(R.id.tattieng);
+        thongtin = findViewById(R.id.thongtin);
         //Xử lý sự kiện nút chơi
         btnChoi.setOnClickListener(new View.OnClickListener() {
             @Override
