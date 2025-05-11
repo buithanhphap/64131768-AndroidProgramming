@@ -61,7 +61,7 @@ public class PlayGameActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == RESULT_OK) {
-                            // Khi người chơi nhấn "TIẾP TỤC", chuyển sang câu hỏi tiếp theo
+                            // Khi người chơi nhấn "CONTINUE", chuyển sang câu hỏi tiếp theo
                             models.NextCauHoi();
                             HienHinhCauHoi();
                         }
