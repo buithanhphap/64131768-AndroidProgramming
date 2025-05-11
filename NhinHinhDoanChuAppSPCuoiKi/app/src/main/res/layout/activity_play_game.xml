@@ -89,6 +89,7 @@
         android:text="Màn 1"
         android:textColor="@color/purple"
         android:textSize="30sp"
+        android:fontFamily="@font/calsan"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
