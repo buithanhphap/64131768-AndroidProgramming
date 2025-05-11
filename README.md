@@ -5,7 +5,8 @@ Lưu các bài tập thực hành, bài tập, dự án trong học tập
 ## Đây là kho lưu trữ bài tập khi tôi làm bài tập lớn và nhỏ, đây là kho lưu trữ tham khảo, không phải dự án lâu dài hoặc có thể sử dụng.
 
 ### [NhinHinhDoanChuAppSPCuoiKi](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/NhinHinhDoanChuAppSPCuoiKi)
-![image](https://github.com/user-attachments/assets/f55a56e8-84cc-4c05-8944-6629378b8a2b)![image](https://github.com/user-attachments/assets/aa03652a-2235-45a6-b4eb-afdd3e3079c4)![image](https://github.com/user-attachments/assets/f179c41e-5a10-45f8-8c1c-d49bed3950c4)![image](https://github.com/user-attachments/assets/914f3fef-a7d5-4371-888c-df6eb62ccedd)![image](https://github.com/user-attachments/assets/decf2576-b98b-44cb-b687-595a6550672d)![image](https://github.com/user-attachments/assets/9e372b2a-0c17-41c4-b222-a841323cb5c7)
+![image](https://github.com/user-attachments/assets/f55a56e8-84cc-4c05-8944-6629378b8a2b)![image](https://github.com/user-attachments/assets/aa03652a-2235-45a6-b4eb-afdd3e3079c4)![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/f179c41e-5a10-45f8-8c1c-d49bed3950c4)![image](https://github.com/user-attachments/assets/914f3fef-a7d5-4371-888c-df6eb62ccedd)![image](https://github.com/user-attachments/assets/decf2576-b98b-44cb-b687-595a6550672d)![image](https://github.com/user-attachments/assets/9e372b2a-0c17-41c4-b222-a841323cb5c7)
 
 ### [bottomNavigationView](https://github.com/buithanhphap/64131768-AndroidProgramming/tree/main/bottomNavigationView)
 ![image](https://github.com/user-attachments/assets/e05a8261-140a-4c7f-9424-b68512b75052)
