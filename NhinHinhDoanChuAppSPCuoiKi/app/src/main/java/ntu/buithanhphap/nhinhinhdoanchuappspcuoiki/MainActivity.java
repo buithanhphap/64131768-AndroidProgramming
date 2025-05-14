@@ -15,26 +15,30 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnChoi, btnLuatchoi, btnThoat;
+    View btnChoi, btnLuatChoi, btnThoat;
     private boolean isSoundOn = true;
     private MediaPlayer mediaPlayer;
     View battieng, tattieng, thongtin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Tìm điều khiển
+
+        // Tìm điều khiển
         btnChoi = findViewById(R.id.btnChoi);
-        btnLuatchoi = findViewById(R.id.btnLuatChoi);
+        btnLuatChoi = findViewById(R.id.btnLuatChoi);
         btnThoat = findViewById(R.id.btnThoat);
         battieng = findViewById(R.id.battieng);
         tattieng = findViewById(R.id.tattieng);
         thongtin = findViewById(R.id.thongtin);
+
         // Khởi tạo MediaPlayer với file âm thanh
         mediaPlayer = MediaPlayer.create(this, R.raw.nhac);
         mediaPlayer.setLooping(true); // Lặp lại âm thanh
         if (isSoundOn) mediaPlayer.start();
-        //Xử lý sự kiện nút chơi
+
+        // Bắt sự kiện nút "Play"
         btnChoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,22 +46,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //Xử lý sự kiện nút luật chơi
-        btnLuatchoi.setOnClickListener(new View.OnClickListener() {
+
+        // Bắt sự kiện nút "How to play"
+        btnLuatChoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RulesActivity.class);
                 startActivity(intent);
             }
         });
-        //Xử lý sự kiện nút thoát
+
+        // Bắt sự kiện nút "Exit"
         btnThoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                finish(); // Thoát Activity
             }
         });
-        // Xử lý Bật tiếng
+
+        // Xử lý nút Bật tiếng
         battieng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        // Xử lý Tắt tiếng
+
+        // Xử lý nút Tắt tiếng
         tattieng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,21 +92,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Xử lý hiện Thông tin
+        // Xử lý nút Thông tin
         thongtin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Thông tin ứng dụng");
                 builder.setMessage("Tên game: Nhìn Hình Đoán Chữ\n" +
-                        "Phiên bản: 1.0\n" +
-                        "Email: support@nhinhinhdoanchu.com");
+                        "Tác giả: Bùi Thanh Pháp, Dương Ngọc Lệnh\n" +
+                        "Email: phap.bt.64cntt@ntu.edu.vn");
                 builder.setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
                 AlertDialog dialog = builder.create();
                 dialog.show();
             }
         });
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
