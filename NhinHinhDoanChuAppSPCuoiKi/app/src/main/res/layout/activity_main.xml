@@ -23,60 +23,50 @@
         app:layout_constraintTop_toTopOf="parent">
     </ImageView>
 
-    <Button
+    <View
         android:id="@+id/btnChoi"
         android:layout_width="190dp"
         android:layout_height="83dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="131dp"
-        android:backgroundTint="@color/green"
-        android:text="Chơi"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:cornerRadius="20dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="111dp"
+        android:background="@drawable/nutplay"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
-    </Button>
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_chainStyle="spread"></View>
 
-    <Button
+    <View
         android:id="@+id/btnThoat"
         android:layout_width="190dp"
         android:layout_height="83dp"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="153dp"
-        android:backgroundTint="@color/red"
-        android:text="Thoát"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="111dp"
+        android:background="@drawable/vienvang"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLuatChoi"
-        app:layout_constraintVertical_bias="0.222" />
+        app:layout_constraintVertical_chainStyle="spread">
 
-    <Button
+    </View>
+
+    <View
         android:id="@+id/btnLuatChoi"
         android:layout_width="190dp"
         android:layout_height="83dp"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="131dp"
-        android:backgroundTint="@color/blue"
-        android:text="Luật chơi"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:cornerRadius="20dp"
+        android:layout_marginEnd="111dp"
+        android:background="@drawable/vienblue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnChoi" />
+        app:layout_constraintTop_toBottomOf="@+id/btnChoi"
+        app:layout_constraintVertical_chainStyle="spread">
+    </View>
 
     <View
         android:id="@+id/battieng"
@@ -109,4 +99,44 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tattieng"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LUẬT CHƠI"
+        android:fontFamily="@font/luckiestguy"
+        android:textColor="@color/white"
+        android:textSize="27dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLuatChoi"
+        app:layout_constraintEnd_toEndOf="@+id/btnLuatChoi"
+        app:layout_constraintStart_toStartOf="@+id/btnLuatChoi"
+        app:layout_constraintTop_toTopOf="@+id/btnLuatChoi" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thoát"
+        android:textStyle="bold"
+        android:fontFamily="@font/luckiestguy"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnThoat"
+        app:layout_constraintEnd_toEndOf="@+id/btnThoat"
+        app:layout_constraintStart_toStartOf="@+id/btnThoat"
+        app:layout_constraintTop_toTopOf="@+id/btnThoat" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHƠI"
+        android:textStyle="bold"
+        android:fontFamily="@font/luckiestguy"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnChoi"
+        app:layout_constraintEnd_toEndOf="@+id/btnChoi"
+        app:layout_constraintStart_toStartOf="@+id/btnChoi"
+        app:layout_constraintTop_toTopOf="@+id/btnChoi" />
 </androidx.constraintlayout.widget.ConstraintLayout>
