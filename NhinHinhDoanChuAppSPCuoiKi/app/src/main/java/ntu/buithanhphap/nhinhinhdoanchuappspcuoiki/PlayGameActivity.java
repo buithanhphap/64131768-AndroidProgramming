@@ -126,7 +126,16 @@ public class PlayGameActivity extends AppCompatActivity {
                     // Cập nhật lại adapter
                     gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
                     gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
-                    if (index == ArrDapAn.size()) {
+
+                    // kiểm tra nếu tất cả ô đã điền thì gọi kiểm tra
+                    boolean full = true;
+                    for (String s : ArrDapAn) {
+                        if (s.isEmpty()) {
+                            full = false;
+                            break;
+                        }
+                    }
+                    if (full) {
                         KiemTraDapAn();
                     }
                 }
@@ -206,15 +215,14 @@ public class PlayGameActivity extends AppCompatActivity {
     }
 
     public void GoiY(View view) {
-
-        // Kiểm tra số tiền
+        // Lấy thông tin người chơi
         models.layThongTin();
         if (models.nguoiChoi.tien < 10) {
             Toast.makeText(this, "Bạn không đủ tiền! Cần 10 đồng xu để nhận gợi ý.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Kiểm tra xem đã điền hết đáp án chưa
+        // Kiểm tra đã điền hết đáp án chưa
         boolean allFilled = true;
         for (String s : ArrDapAn) {
             if (s.isEmpty()) {
@@ -227,16 +235,16 @@ public class PlayGameActivity extends AppCompatActivity {
             return;
         }
 
-        // Nếu chưa điền gì (index == 0), chọn ngẫu nhiên một vị trí
+        // Chọn vị trí cần gợi ý
         int pos;
         Random random = new Random();
         if (index == 0) {
-            pos = random.nextInt(ArrDapAn.size()); // Chọn ngẫu nhiên một vị trí
-            while (!ArrDapAn.get(pos).isEmpty()) { // Đảm bảo vị trí này trống
+            // Gợi ý vị trí ngẫu nhiên
+            do {
                 pos = random.nextInt(ArrDapAn.size());
-            }
+            } while (!ArrDapAn.get(pos).isEmpty());
         } else {
-            // Tìm ô trống tiếp theo
+            // Gợi ý vị trí đầu tiên còn trống
             pos = -1;
             for (int i = 0; i < ArrDapAn.size(); i++) {
                 if (ArrDapAn.get(i).isEmpty()) {
@@ -250,10 +258,10 @@ public class PlayGameActivity extends AppCompatActivity {
             }
         }
 
-        // Lấy ký tự đúng tại vị trí pos từ dapAn
+        // Lấy ký tự đúng từ đáp án
         String correctChar = String.valueOf(dapAn.charAt(pos)).toUpperCase();
 
-        // Tìm ký tự này trong ArrNhapDapAn
+        // Tìm ký tự trong danh sách nhập đáp án
         int charPos = -1;
         for (int i = 0; i < ArrNhapDapAn.size(); i++) {
             if (ArrNhapDapAn.get(i).equals(correctChar)) {
@@ -261,36 +269,49 @@ public class PlayGameActivity extends AppCompatActivity {
                 break;
             }
         }
-
         if (charPos == -1) {
             Toast.makeText(this, "Không tìm thấy ký tự gợi ý trong danh sách!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Điền ký tự gợi ý vào ArrDapAn và xóa khỏi ArrNhapDapAn
+        // Điền ký tự và cập nhật dữ liệu
         ArrNhapDapAn.set(charPos, "");
         ArrDapAn.set(pos, correctChar);
-        ViTriBanDau.set(pos, charPos); // Lưu vị trí gốc để có thể hoàn tác
-        index = pos + 1; // Cập nhật index để chỉ đến ô trống tiếp theo
+        ViTriBanDau.set(pos, charPos);
+
+        // Cập nhật chỉ số index
+        if (pos > 0) {
+            index = 0;
+        } else {
+            index = pos + 1;
+        }
         if (index >= ArrDapAn.size()) {
-            index = ArrDapAn.size(); // Đảm bảo index không vượt quá kích thước
+            index = ArrDapAn.size();
         }
 
-        // Cập nhật adapter
+        // Cập nhật giao diện
         gdvDapAn.setAdapter(new DapAnAdapter(this, 0, ArrDapAn));
         gdvNhapDapAn.setAdapter(new DapAnAdapter(this, 0, ArrNhapDapAn));
 
-        // Kiểm tra nếu đã điền hết đáp án
-        if (index == ArrDapAn.size()) {
-            KiemTraDapAn();
-        }
-
-        // Trừ tiền và cập nhật giao diện
-        models.layThongTin();
+        // Trừ tiền và lưu lại
         models.nguoiChoi.tien -= 10;
         models.luuThongTin();
         tvTien.setText(String.valueOf(models.nguoiChoi.tien));
+
+        // Thông báo đã gợi ý
         Toast.makeText(this, "Đã gợi ý ký tự: " + correctChar, Toast.LENGTH_SHORT).show();
+
+        // Nếu tất cả các ô đã được điền, thì tự động kiểm tra đáp án
+        boolean isFull = true;
+        for (String s : ArrDapAn) {
+            if (s.isEmpty()) {
+                isFull = false;
+                break;
+            }
+        }
+        if (isFull) {
+            KiemTraDapAn();
+        }
     }
     public void CauTiepTheo(View view) {
         // Kiểm tra số tiền
