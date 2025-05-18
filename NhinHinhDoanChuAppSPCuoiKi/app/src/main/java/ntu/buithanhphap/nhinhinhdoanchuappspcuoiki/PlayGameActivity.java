@@ -320,21 +320,15 @@ public class PlayGameActivity extends AppCompatActivity {
             Toast.makeText(this, "Bạn không đủ tiền! Cần 10 đồng xu để chuyển câu hỏi khác.", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        // Kiểm tra xem có còn câu hỏi tiếp theo không
-        if (models.cauSo + 1 >= models.arr.size()) {
-            Toast.makeText(this, "Bạn đã hoàn thành tất cả câu hỏi!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(PlayGameActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
+        // Nếu đang ở câu cuối, không cho chuyển tiếp
+        if (models.cauSo == models.arr.size() - 1) {
+            Toast.makeText(this, "Đã hết câu hỏi.", Toast.LENGTH_SHORT).show();
             return;
         }
-
         // Trừ tiền và lưu
         models.nguoiChoi.tien -= 10;
         models.luuThongTin();
         tvTien.setText(String.valueOf(models.nguoiChoi.tien));
-
         // Chuyển sang câu hỏi tiếp theo
         models.NextCauHoi();
         HienHinhCauHoi();
