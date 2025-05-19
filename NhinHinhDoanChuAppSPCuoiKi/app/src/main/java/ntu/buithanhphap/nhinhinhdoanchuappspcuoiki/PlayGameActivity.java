@@ -61,7 +61,7 @@ public class PlayGameActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == RESULT_OK) {
-                            // Khi người chơi nhấn "CONTINUE", chuyển sang câu hỏi tiếp theo
+                            // Khi người chơi nhấn "Tiếp nè", chuyển sang câu hỏi tiếp theo
                             models.NextCauHoi();
                             HienHinhCauHoi();
                         }
@@ -127,7 +127,6 @@ public class PlayGameActivity extends AppCompatActivity {
                     gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
                     gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
 
-                    // kiểm tra nếu tất cả ô đã điền thì gọi kiểm tra
                     boolean full = true;
                     for (String s : ArrDapAn) {
                         if (s.isEmpty()) {
@@ -141,6 +140,7 @@ public class PlayGameActivity extends AppCompatActivity {
                 }
             }
         });
+
         gdvDapAn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -177,7 +177,13 @@ public class PlayGameActivity extends AppCompatActivity {
         }
         c = c.toUpperCase();
         if(c.equals(dapAn.toUpperCase())){
-            Toast.makeText(this, "Bạn đã trả lời đúng",Toast.LENGTH_SHORT).show();
+            CustomToast.makeText(
+                    this,
+                    "Bạn đã trả lời đúng",
+                    Toast.LENGTH_SHORT,
+                    CustomToast.SUCCESS,
+                    true // Hiển thị icon Android
+            ).show();
             models.layThongTin();
             models.nguoiChoi.tien = models.nguoiChoi.tien + 15;
             models.luuThongTin();
@@ -191,7 +197,13 @@ public class PlayGameActivity extends AppCompatActivity {
                 quaManActivityLauncher.launch(intent);
             }
         } else {
-            Toast.makeText(this, "Câu trả lời của bạn đã sai", Toast.LENGTH_SHORT).show();
+            CustomToast.makeText(
+                    this,
+                    "Câu trả lời của bạn đã sai",
+                    Toast.LENGTH_SHORT,
+                    CustomToast.ERROR,
+                    true // Hiển thị icon Android
+            ).show();
         }
     }
     private void HienHinhCauHoi(){
@@ -213,15 +225,19 @@ public class PlayGameActivity extends AppCompatActivity {
         models.layThongTin();
         tvTien.setText(models.nguoiChoi.tien+"");
     }
-
     public void GoiY(View view) {
         // Lấy thông tin người chơi
         models.layThongTin();
         if (models.nguoiChoi.tien < 10) {
-            Toast.makeText(this, "Bạn không đủ tiền! Cần 10 đồng xu để nhận gợi ý.", Toast.LENGTH_SHORT).show();
+            CustomToast.makeText(
+                    this,
+                    "Bạn không đủ tiền! Cần 10 đồng xu để nhận gợi ý.",
+                    Toast.LENGTH_SHORT,
+                    CustomToast.WARNING,
+                    true // Hiển thị icon Android
+            ).show();
             return;
         }
-
         // Kiểm tra đã điền hết đáp án chưa
         boolean allFilled = true;
         for (String s : ArrDapAn) {
@@ -231,10 +247,15 @@ public class PlayGameActivity extends AppCompatActivity {
             }
         }
         if (allFilled) {
-            Toast.makeText(this, "Bạn đã điền hết đáp án!", Toast.LENGTH_SHORT).show();
+            CustomToast.makeText(
+                    this,
+                    "Bạn đã điền hết đáp án.",
+                    Toast.LENGTH_SHORT,
+                    CustomToast.WARNING,
+                    true // Hiển thị icon Android
+            ).show();
             return;
         }
-
         // Chọn vị trí cần gợi ý
         int pos;
         Random random = new Random();
@@ -253,14 +274,18 @@ public class PlayGameActivity extends AppCompatActivity {
                 }
             }
             if (pos == -1) {
-                Toast.makeText(this, "Không tìm thấy ô trống!", Toast.LENGTH_SHORT).show();
+                CustomToast.makeText(
+                        this,
+                        "Không tìm thấy ô trống!",
+                        Toast.LENGTH_SHORT,
+                        CustomToast.WARNING,
+                        true // Hiển thị icon Android
+                ).show();
                 return;
             }
         }
-
         // Lấy ký tự đúng từ đáp án
         String correctChar = String.valueOf(dapAn.charAt(pos)).toUpperCase();
-
         // Tìm ký tự trong danh sách nhập đáp án
         int charPos = -1;
         for (int i = 0; i < ArrNhapDapAn.size(); i++) {
@@ -270,10 +295,15 @@ public class PlayGameActivity extends AppCompatActivity {
             }
         }
         if (charPos == -1) {
-            Toast.makeText(this, "Không tìm thấy ký tự gợi ý trong danh sách!", Toast.LENGTH_SHORT).show();
+            CustomToast.makeText(
+                    this,
+                    "Không tìm thấy ký tự trong danh sách!",
+                    Toast.LENGTH_SHORT,
+                    CustomToast.WARNING,
+                    true // Hiển thị icon Android
+            ).show();
             return;
         }
-
         // Điền ký tự và cập nhật dữ liệu
         ArrNhapDapAn.set(charPos, "");
         ArrDapAn.set(pos, correctChar);
@@ -288,19 +318,21 @@ public class PlayGameActivity extends AppCompatActivity {
         if (index >= ArrDapAn.size()) {
             index = ArrDapAn.size();
         }
-
         // Cập nhật giao diện
         gdvDapAn.setAdapter(new DapAnAdapter(this, 0, ArrDapAn));
         gdvNhapDapAn.setAdapter(new DapAnAdapter(this, 0, ArrNhapDapAn));
-
         // Trừ tiền và lưu lại
         models.nguoiChoi.tien -= 10;
         models.luuThongTin();
         tvTien.setText(String.valueOf(models.nguoiChoi.tien));
-
         // Thông báo đã gợi ý
-        Toast.makeText(this, "Đã gợi ý ký tự: " + correctChar, Toast.LENGTH_SHORT).show();
-
+        CustomToast.makeText(
+                this,
+                "Đã gợi ý ký tự: " + correctChar,
+                Toast.LENGTH_SHORT,
+                CustomToast.SUCCESS,
+                true // Hiển thị icon Android, đổi thành false nếu không muốn
+        ).show();
         // Nếu tất cả các ô đã được điền, thì tự động kiểm tra đáp án
         boolean isFull = true;
         for (String s : ArrDapAn) {
@@ -313,16 +345,29 @@ public class PlayGameActivity extends AppCompatActivity {
             KiemTraDapAn();
         }
     }
+
     public void CauTiepTheo(View view) {
         // Kiểm tra số tiền
         models.layThongTin();
         if (models.nguoiChoi.tien < 10) {
-            Toast.makeText(this, "Bạn không đủ tiền! Cần 10 đồng xu để chuyển câu hỏi khác.", Toast.LENGTH_SHORT).show();
+            CustomToast.makeText(
+                    this,
+                    "Bạn không đủ tiền! Cần 10 đồng xu để chuyển câu hỏi khác.",
+                    Toast.LENGTH_SHORT,
+                    CustomToast.WARNING,
+                    true // Hiển thị icon Android, đổi thành false nếu không muốn
+            ).show();
             return;
         }
         // Nếu đang ở câu cuối, không cho chuyển tiếp
         if (models.cauSo == models.arr.size() - 1) {
-            Toast.makeText(this, "Đã hết câu hỏi.", Toast.LENGTH_SHORT).show();
+            CustomToast.makeText(
+                    this,
+                    "Đã hết câu hỏi.",
+                    Toast.LENGTH_SHORT,
+                    CustomToast.WARNING,
+                    true // Hiển thị icon Android, đổi thành false nếu không muốn
+            ).show();
             return;
         }
         // Trừ tiền và lưu
@@ -332,6 +377,12 @@ public class PlayGameActivity extends AppCompatActivity {
         // Chuyển sang câu hỏi tiếp theo
         models.NextCauHoi();
         HienHinhCauHoi();
-        Toast.makeText(this, "Đã chuyển sang câu hỏi tiếp theo. Trừ 10 đồng xu.", Toast.LENGTH_SHORT).show();
+        CustomToast.makeText(
+                this,
+                "Đã chuyển sang câu hỏi tiếp theo. Trừ 10 đồng xu.",
+                Toast.LENGTH_SHORT,
+                CustomToast.SUCCESS,
+                true // Hiển thị icon Android, đổi thành false nếu không muốn
+        ).show();
     }
 }

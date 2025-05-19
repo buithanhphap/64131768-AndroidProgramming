@@ -37,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this, R.raw.nhac);
         mediaPlayer.setLooping(true); // Lặp lại âm thanh
         if (isSoundOn) mediaPlayer.start();
-
-        // Bắt sự kiện nút "Play"
+        // Bắt sự kiện nút "Chơi"
         btnChoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // Bắt sự kiện nút "How to play"
+        // Bắt sự kiện nút "Luật chơi"
         btnLuatChoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,15 +53,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // Bắt sự kiện nút "Exit"
+        // Bắt sự kiện nút "Thoát"
         btnThoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish(); // Thoát Activity
             }
         });
-
         // Xử lý nút Bật tiếng
         battieng.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +69,13 @@ public class MainActivity extends AppCompatActivity {
                     if (!mediaPlayer.isPlaying()) {
                         mediaPlayer.start();
                     }
-                    Toast.makeText(MainActivity.this, "Bật tiếng thành công!", Toast.LENGTH_SHORT).show();
+                    CustomToast.makeText(
+                            MainActivity.this,
+                            "Bật tiếng thành công!",
+                            Toast.LENGTH_SHORT,
+                            CustomToast.SUCCESS,
+                            true // Hiển thị icon Android, đổi thành false nếu không muốn
+                    ).show();
                 }
             }
         });
@@ -87,7 +89,13 @@ public class MainActivity extends AppCompatActivity {
                     if (mediaPlayer.isPlaying()) {
                         mediaPlayer.pause();
                     }
-                    Toast.makeText(MainActivity.this, "Tắt tiếng thành công!", Toast.LENGTH_SHORT).show();
+                    CustomToast.makeText(
+                            MainActivity.this,
+                            "Tắt tiếng thành công!",
+                            Toast.LENGTH_SHORT,
+                            CustomToast.SUCCESS,
+                            true
+                    ).show();
                 }
             }
         });
@@ -120,4 +128,5 @@ public class MainActivity extends AppCompatActivity {
             mediaPlayer = null;
         }
     }
+
 }
