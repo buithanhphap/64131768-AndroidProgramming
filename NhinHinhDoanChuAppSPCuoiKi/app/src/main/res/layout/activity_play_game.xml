@@ -18,12 +18,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTien"
-        app:srcCompat="@drawable/hinh1">
+        app:srcCompat="@drawable/hinh1" />
 
-    </ImageView>
-
-    <GridView
-        android:id="@+id/gdvDapAn"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDapAn"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="1dp"
@@ -33,8 +31,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgHinhCauHoi" />
 
-    <GridView
-        android:id="@+id/gdvNhapDapAn"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNhapDapAn"
         android:layout_width="412dp"
         android:layout_height="240dp"
         android:layout_marginTop="10dp"
@@ -42,7 +40,7 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gdvDapAn" />
+        app:layout_constraintTop_toBottomOf="@+id/rvDapAn" />
 
     <TextView
         android:id="@+id/tvTien"
@@ -65,10 +63,10 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/icon"
-         app:layout_constraintEnd_toStartOf="@id/tvTien"
+        app:layout_constraintEnd_toStartOf="@id/tvTien"
         app:layout_constraintTop_toTopOf="@id/tvTien"
         app:layout_constraintBottom_toBottomOf="@id/tvTien"
-         android:layout_marginEnd="-30dp" />
+        android:layout_marginEnd="-30dp" />
 
     <ImageView
         android:id="@+id/imgHomeIcon"
@@ -116,5 +114,6 @@
         android:src="@drawable/icon_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="OnClick,SpeakableTextPresentCheck"/>
+        tools:ignore="OnClick,SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

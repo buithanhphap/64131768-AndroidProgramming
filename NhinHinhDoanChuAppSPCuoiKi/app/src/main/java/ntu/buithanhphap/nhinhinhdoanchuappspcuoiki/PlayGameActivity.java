@@ -3,8 +3,6 @@ package ntu.buithanhphap.nhinhinhdoanchuappspcuoiki;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +12,8 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
@@ -25,49 +25,45 @@ public class PlayGameActivity extends AppCompatActivity {
     PlayGameModel models;
     HinhCauHoi hinhCauHoi;
     ArrayList<String> ArrDapAn;
-    GridView gdvDapAn;
+    private RecyclerView rvDapAn, rvNhapDapAn;
     ArrayList<String> ArrNhapDapAn;
-    GridView gdvNhapDapAn;
-    private String dapAn="CADAO";
+    private String dapAn = "CADAO";
     int index = 0;
     ArrayList<Integer> ViTriBanDau;
-    ImageView imgHinhCauHoi, imghomeIcon;
+    ImageView imgHinhCauHoi, imgHomeIcon;
     TextView tvTien, tvManSo;
-    // Launcher để nhận kết quả từ QuaManMainActivity
     private ActivityResultLauncher<Intent> quaManActivityLauncher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_game);
-        //Tim dieu khien
-        gdvDapAn = findViewById(R.id.gdvDapAn);
-        gdvNhapDapAn = findViewById(R.id.gdvNhapDapAn);
+
+        // Tìm điều khiển
+        rvDapAn = findViewById(R.id.rvDapAn);
+        rvNhapDapAn = findViewById(R.id.rvNhapDapAn);
         imgHinhCauHoi = findViewById(R.id.imgHinhCauHoi);
         tvTien = findViewById(R.id.tvTien);
-        imghomeIcon = findViewById(R.id.imgHomeIcon);
+        imgHomeIcon = findViewById(R.id.imgHomeIcon);
         tvManSo = findViewById(R.id.tvManSo);
-        imghomeIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PlayGameActivity.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
+
+        // Sự kiện click cho imgHomeIcon
+        imgHomeIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(PlayGameActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         });
+
         // Khởi tạo launcher để nhận kết quả từ QuaManMainActivity
         quaManActivityLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-                    @Override
-                    public void onActivityResult(ActivityResult result) {
-                        if (result.getResultCode() == RESULT_OK) {
-                            // Khi người chơi nhấn "Tiếp nè", chuyển sang câu hỏi tiếp theo
-                            models.NextCauHoi();
-                            HienHinhCauHoi();
-                        }
+                result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+                        models.NextCauHoi();
+                        HienHinhCauHoi();
                     }
                 });
-        OnClick();
+
         // Khởi tạo dữ liệu
         models = new PlayGameModel(this);
         ArrDapAn = new ArrayList<>();
@@ -75,20 +71,21 @@ public class PlayGameActivity extends AppCompatActivity {
         ViTriBanDau = new ArrayList<>();
         HienHinhCauHoi();
     }
+
     private void HienDungODapAn() {
-        index =0;
+        index = 0;
         ArrDapAn.clear();
         ArrNhapDapAn.clear();
         ViTriBanDau.clear();
         Random random = new Random();
 
-        // Khởi tạo arrDapAn với các ô trống
+        // Khởi tạo ArrDapAn với các ô trống
         for (int i = 0; i < dapAn.length(); i++) {
             ArrDapAn.add("");
             ViTriBanDau.add(-1);
         }
 
-        // Thêm các ký tự của dapAn (chữ hoa) vào arrNhapDapAn
+        // Thêm các ký tự của dapAn (chữ hoa) vào ArrNhapDapAn
         for (int i = 0; i < dapAn.length(); i++) {
             ArrNhapDapAn.add(String.valueOf(dapAn.charAt(i)).toUpperCase());
         }
@@ -101,94 +98,52 @@ public class PlayGameActivity extends AppCompatActivity {
         // Xáo trộn các ký tự trong ArrNhapDapAn
         Collections.shuffle(ArrNhapDapAn);
     }
-    private void OnClick() {
-        gdvNhapDapAn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String c = (String) parent.getItemAtPosition(position);
-                if (c.length() != 0 && index < ArrDapAn.size()) {
-                    // Tìm ô trống tiếp theo nếu ô hiện tại đã được điền
-                    if (ArrDapAn.get(index).length() != 0) {
-                        for (int i = 0; i < ArrDapAn.size(); i++) {
-                            if (ArrDapAn.get(i).isEmpty()) {
-                                index = i;
-                                break;
-                            }
-                        }
-                        if (ArrDapAn.get(index).length() != 0) {
-                            return; // Không còn ô trống để nhập
-                        }
-                    }
-                    ArrNhapDapAn.set(position, "");
-                    ArrDapAn.set(index, c);
-                    ViTriBanDau.set(index, position);
-                    index++;
-                    // Cập nhật lại adapter
-                    gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
-                    gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
 
-                    boolean full = true;
-                    for (String s : ArrDapAn) {
-                        if (s.isEmpty()) {
-                            full = false;
-                            break;
-                        }
-                    }
-                    if (full) {
-                        KiemTraDapAn();
-                    }
-                }
-            }
-        });
+    private void HienHinhCauHoi() {
+        hinhCauHoi = models.LayHinhCauHoi();
+        if (hinhCauHoi == null) {
+            Toast.makeText(this, "Hết câu hỏi!", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+        dapAn = hinhCauHoi.dapAn;
+        HienDungODapAn();
 
-        gdvDapAn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String c = (String) parent.getItemAtPosition(position);
-                if(c.length() != 0){
-                    // Xóa ký tự tại vị trí được chọn
-                    ArrDapAn.set(position, "");
-                    // Trả ký tự về đúng vị trí ban đầu trong ArrNhapDapAn
-                    int vitribd = ViTriBanDau.get(position);
-                    if (vitribd != -1) {
-                        ArrNhapDapAn.set(vitribd, c);
-                    }
-                    // Tìm vị trí trống đầu tiên từ trái sang phải để đặt lại index
-                    index = 0;
-                    for (int i = 0; i < ArrDapAn.size(); i++) {
-                        if (ArrDapAn.get(i).length() == 0) {
-                            index = i;
-                            break;
-                        }
-                    }
-                    // Đặt lại vị trí gốc của ô này
-                    ViTriBanDau.set(position, -1);
-                    // Cập nhật lại adapter
-                    gdvDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrDapAn));
-                    gdvNhapDapAn.setAdapter(new DapAnAdapter(PlayGameActivity.this, 0, ArrNhapDapAn));
-                }
-            }
-        });
+        // Thiết lập RecyclerView
+        rvDapAn.setLayoutManager(new GridLayoutManager(this, ArrDapAn.size()));
+        rvDapAn.setAdapter(new DapAnRecyclerAdapter(this, ArrDapAn, true));
+
+        rvNhapDapAn.setLayoutManager(new GridLayoutManager(this, ArrNhapDapAn.size() / 2));
+        rvNhapDapAn.setAdapter(new DapAnRecyclerAdapter(this, ArrNhapDapAn, false));
+
+        // Tải hình ảnh câu hỏi
+        Glide.with(this)
+                .load(hinhCauHoi.hinhAnh)
+                .into(imgHinhCauHoi);
+
+        tvManSo.setText("Màn " + (models.getCauSo() + 1));
+        models.layThongTin();
+        tvTien.setText(models.nguoiChoi.tien + "");
     }
-    private void KiemTraDapAn(){
+
+    private void KiemTraDapAn() {
         String c = "";
-        for(String c1:ArrDapAn){
+        for (String c1 : ArrDapAn) {
             c += c1;
         }
         c = c.toUpperCase();
-        if(c.equals(dapAn.toUpperCase())){
+        if (c.equals(dapAn.toUpperCase())) {
             CustomToast.makeText(
                     this,
                     "Bạn đã trả lời đúng",
                     Toast.LENGTH_SHORT,
                     CustomToast.SUCCESS,
-                    true // Hiển thị icon Android
+                    true
             ).show();
             models.layThongTin();
             models.nguoiChoi.tien = models.nguoiChoi.tien + 15;
             models.luuThongTin();
-            // Chuyển sang QuaManMainActivity nếu còn câu hỏi, hoặc KetThucGameMainActivity nếu hết
-            if (models.cauSo + 1 >= models.arr.size()) {
+            if (models.getCauSo() + 1 >= models.arr.size()) {
                 Intent intent = new Intent(PlayGameActivity.this, KetThucGameMainActivity.class);
                 startActivity(intent);
                 finish();
@@ -202,31 +157,45 @@ public class PlayGameActivity extends AppCompatActivity {
                     "Câu trả lời của bạn đã sai",
                     Toast.LENGTH_SHORT,
                     CustomToast.ERROR,
-                    true // Hiển thị icon Android
+                    true
             ).show();
         }
     }
-    private void HienHinhCauHoi(){
-        hinhCauHoi = models.LayHinhCauHoi();
-        dapAn = hinhCauHoi.dapAn;
-        HienDungODapAn();
-        // Set số cột bằng đúng số lượng phần tử => nằm ngang
-        gdvDapAn.setNumColumns(ArrDapAn.size());
-        // Gán adapter
-        gdvDapAn.setAdapter(new DapAnAdapter(this, 0, ArrDapAn));
-        // Set số cột bằng đúng số lượng phần tử => nằm ngang
-        gdvNhapDapAn.setNumColumns(ArrNhapDapAn.size()/2);
-        // Gán adapter
-        gdvNhapDapAn.setAdapter(new DapAnAdapter(this, 0, ArrNhapDapAn));
-        Glide.with(this)
-                .load(hinhCauHoi.hinhAnh)
-                .into(imgHinhCauHoi);
-        tvManSo.setText("Màn " + (models.cauSo + 1)); // Cập nhật tên màn
-        models.layThongTin();
-        tvTien.setText(models.nguoiChoi.tien+"");
+
+    // Thêm getter để truy cập rvDapAn và rvNhapDapAn
+    public RecyclerView getRvDapAn() {
+        return rvDapAn;
+    }
+
+    public RecyclerView getRvNhapDapAn() {
+        return rvNhapDapAn;
+    }
+
+    // Thêm phương thức công khai để gọi KiemTraDapAn
+    public void checkAnswer() {
+        KiemTraDapAn();
+    }
+    // Thêm getter cho các biến
+    public ArrayList<String> getArrDapAn() {
+        return ArrDapAn;
+    }
+
+    public ArrayList<String> getArrNhapDapAn() {
+        return ArrNhapDapAn;
+    }
+
+    public ArrayList<Integer> getViTriBanDau() {
+        return ViTriBanDau;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
     public void GoiY(View view) {
-        // Lấy thông tin người chơi
         models.layThongTin();
         if (models.nguoiChoi.tien < 10) {
             CustomToast.makeText(
@@ -234,13 +203,13 @@ public class PlayGameActivity extends AppCompatActivity {
                     "Bạn không đủ tiền! Cần 10 đồng xu để nhận gợi ý.",
                     Toast.LENGTH_SHORT,
                     CustomToast.WARNING,
-                    true // Hiển thị icon Android
+                    true
             ).show();
             return;
         }
-        // Kiểm tra đã điền hết đáp án chưa
+
         boolean allFilled = true;
-        for (String s : ArrDapAn) {
+        for (String s : getArrDapAn()) {
             if (s.isEmpty()) {
                 allFilled = false;
                 break;
@@ -252,23 +221,21 @@ public class PlayGameActivity extends AppCompatActivity {
                     "Bạn đã điền hết đáp án.",
                     Toast.LENGTH_SHORT,
                     CustomToast.WARNING,
-                    true // Hiển thị icon Android
+                    true
             ).show();
             return;
         }
-        // Chọn vị trí cần gợi ý
+
         int pos;
         Random random = new Random();
-        if (index == 0) {
-            // Gợi ý vị trí ngẫu nhiên
+        if (getIndex() == 0) {
             do {
-                pos = random.nextInt(ArrDapAn.size());
-            } while (!ArrDapAn.get(pos).isEmpty());
+                pos = random.nextInt(getArrDapAn().size());
+            } while (!getArrDapAn().get(pos).isEmpty());
         } else {
-            // Gợi ý vị trí đầu tiên còn trống
             pos = -1;
-            for (int i = 0; i < ArrDapAn.size(); i++) {
-                if (ArrDapAn.get(i).isEmpty()) {
+            for (int i = 0; i < getArrDapAn().size(); i++) {
+                if (getArrDapAn().get(i).isEmpty()) {
                     pos = i;
                     break;
                 }
@@ -279,17 +246,16 @@ public class PlayGameActivity extends AppCompatActivity {
                         "Không tìm thấy ô trống!",
                         Toast.LENGTH_SHORT,
                         CustomToast.WARNING,
-                        true // Hiển thị icon Android
+                        true
                 ).show();
                 return;
             }
         }
-        // Lấy ký tự đúng từ đáp án
+
         String correctChar = String.valueOf(dapAn.charAt(pos)).toUpperCase();
-        // Tìm ký tự trong danh sách nhập đáp án
         int charPos = -1;
-        for (int i = 0; i < ArrNhapDapAn.size(); i++) {
-            if (ArrNhapDapAn.get(i).equals(correctChar)) {
+        for (int i = 0; i < getArrNhapDapAn().size(); i++) {
+            if (getArrNhapDapAn().get(i).equals(correctChar)) {
                 charPos = i;
                 break;
             }
@@ -300,54 +266,55 @@ public class PlayGameActivity extends AppCompatActivity {
                     "Không tìm thấy ký tự trong danh sách!",
                     Toast.LENGTH_SHORT,
                     CustomToast.WARNING,
-                    true // Hiển thị icon Android
+                    true
             ).show();
             return;
         }
-        // Điền ký tự và cập nhật dữ liệu
-        ArrNhapDapAn.set(charPos, "");
-        ArrDapAn.set(pos, correctChar);
-        ViTriBanDau.set(pos, charPos);
 
-        // Cập nhật chỉ số index
+        getArrNhapDapAn().set(charPos, "");
+        getArrDapAn().set(pos, correctChar);
+        getViTriBanDau().set(pos, charPos);
+
         if (pos > 0) {
-            index = 0;
+            setIndex(0);
         } else {
-            index = pos + 1;
+            setIndex(pos + 1);
         }
-        if (index >= ArrDapAn.size()) {
-            index = ArrDapAn.size();
+        if (getIndex() >= getArrDapAn().size()) {
+            setIndex(getArrDapAn().size());
         }
-        // Cập nhật giao diện
-        gdvDapAn.setAdapter(new DapAnAdapter(this, 0, ArrDapAn));
-        gdvNhapDapAn.setAdapter(new DapAnAdapter(this, 0, ArrNhapDapAn));
-        // Trừ tiền và lưu lại
+
+        rvDapAn.getAdapter().notifyDataSetChanged();
+        rvNhapDapAn.getAdapter().notifyDataSetChanged();
+
         models.nguoiChoi.tien -= 10;
         models.luuThongTin();
         tvTien.setText(String.valueOf(models.nguoiChoi.tien));
-        // Thông báo đã gợi ý
+
         CustomToast.makeText(
                 this,
                 "Đã gợi ý ký tự: " + correctChar,
                 Toast.LENGTH_SHORT,
                 CustomToast.SUCCESS,
-                true // Hiển thị icon Android, đổi thành false nếu không muốn
+                true
         ).show();
-        // Nếu tất cả các ô đã được điền, thì tự động kiểm tra đáp án
-        boolean isFull = true;
-        for (String s : ArrDapAn) {
-            if (s.isEmpty()) {
-                isFull = false;
-                break;
-            }
-        }
-        if (isFull) {
-            KiemTraDapAn();
+
+        // Kiểm tra đáp án sau khi gợi ý
+        if (isAllFilled()) {
+            checkAnswer();
         }
     }
 
+    public boolean isAllFilled() {
+        for (String s : getArrDapAn()) {
+            if (s.isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void CauTiepTheo(View view) {
-        // Kiểm tra số tiền
         models.layThongTin();
         if (models.nguoiChoi.tien < 10) {
             CustomToast.makeText(
@@ -355,34 +322,35 @@ public class PlayGameActivity extends AppCompatActivity {
                     "Bạn không đủ tiền! Cần 10 đồng xu để chuyển câu hỏi khác.",
                     Toast.LENGTH_SHORT,
                     CustomToast.WARNING,
-                    true // Hiển thị icon Android, đổi thành false nếu không muốn
+                    true
             ).show();
             return;
         }
-        // Nếu đang ở câu cuối, không cho chuyển tiếp
-        if (models.cauSo == models.arr.size() - 1) {
+
+        if (models.getCauSo() == models.arr.size() - 1) {
             CustomToast.makeText(
                     this,
                     "Đã hết câu hỏi.",
                     Toast.LENGTH_SHORT,
                     CustomToast.WARNING,
-                    true // Hiển thị icon Android, đổi thành false nếu không muốn
+                    true
             ).show();
             return;
         }
-        // Trừ tiền và lưu
+
         models.nguoiChoi.tien -= 10;
         models.luuThongTin();
         tvTien.setText(String.valueOf(models.nguoiChoi.tien));
-        // Chuyển sang câu hỏi tiếp theo
+
         models.NextCauHoi();
         HienHinhCauHoi();
+
         CustomToast.makeText(
                 this,
                 "Đã chuyển sang câu hỏi tiếp theo. Trừ 10 đồng xu.",
                 Toast.LENGTH_SHORT,
                 CustomToast.SUCCESS,
-                true // Hiển thị icon Android, đổi thành false nếu không muốn
+                true
         ).show();
     }
 }
