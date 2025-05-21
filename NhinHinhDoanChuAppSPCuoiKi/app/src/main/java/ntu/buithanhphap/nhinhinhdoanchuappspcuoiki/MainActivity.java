@@ -109,10 +109,10 @@ public class MainActivity extends AppCompatActivity {
                 builder.setMessage("App game: Nhìn Hình Đoán Chữ\n" +
                         "Giảng viên hướng dẫn: Mai Cường Thọ\n" +
                         "Sinh viên thực hiện: 1. Bùi Thanh Pháp\n" +
-                        "                                     2. Dương Ngọc Lệnh\n" +
+                        "                                    2. Dương Ngọc Lệnh\n" +
                         "Lớp: 64.TTMMT\n" +
                         "Email: phap.bt.64cntt@ntu.edu.vn\n" +
-                        "             lenh.dn.64cntt@ntu.edu.vn");
+                        "            lenh.dn.64cntt@ntu.edu.vn");
                 builder.setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
                 AlertDialog dialog = builder.create();
                 dialog.show();
