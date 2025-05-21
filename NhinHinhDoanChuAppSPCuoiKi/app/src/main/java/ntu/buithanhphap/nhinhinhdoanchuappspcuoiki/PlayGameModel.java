@@ -44,4 +44,7 @@ public class PlayGameModel {
     public void luuThongTin(){
         nguoiChoi.saveTT(p);
     }
+    public int getCauSo() {
+        return cauSo;
+    }
 }
